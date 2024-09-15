@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- ToolbarTitle -->
+    <style name="LLPToolbarTitle">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/llp_black</item>
+    </style>
+
+    <!-- Header -->
+    <style name="LLPHeader">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/llp_black</item>
+    </style>
+
+    <!-- Body1 -->
+    <style name="LLPBody1">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/llp_body_text_1</item>
+    </style>
+
+    <!-- BodyBold1 -->
+    <style name="LLPBodyBold1">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/llp_black</item>
+    </style>
+
+    <!-- Body2 -->
+    <style name="LLPBody2">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/llp_body_text_1</item>
+    </style>
+
+    <!-- BodyBold2 -->
+    <style name="LLPBodyBold2">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/llp_black</item>
+    </style>
+
+    <!-- Body3 -->
+    <style name="LLPBody3">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/llp_body_text_1</item>
+    </style>
+
+    <!-- BodyBold3 -->
+    <style name="LLPBodyBold3">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/llp_black</item>
+    </style>
+
+    <!-- Body4 -->
+    <style name="LLPBody4">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/llp_body_text_1</item>
+    </style>
+
+    <!-- BodyBold4 -->
+    <style name="LLPBodyBold4">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/llp_black</item>
+    </style>
+
+    <!-- Button -->
+    <style name="LLPButton" parent="@android:style/Widget.Button">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingStart">32dp</item>
+        <item name="android:paddingEnd">32dp</item>
+        <item name="android:paddingTop">13dp</item>
+        <item name="android:paddingBottom">13dp</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <!-- Primary Button -->
+    <style name="LLPButton.Primary">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:background">@drawable/llp_primary_button</item>
+        <item name="android:textColor">@color/llp_white</item>
+    </style>
+
+    <!-- Secondary Button -->
+    <style name="LLPButton.Secondary">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:background">@drawable/llp_secondary_button</item>
+        <item name="android:textColor">@color/llp_primary_teal</item>
+    </style>
+
+    <!-- Checkbox -->
+    <style name="LLPCheckbox">
+        <item name="android:textSize">10sp</item>
+        <item name="android:textColor">@color/llp_body_text_1</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:button">@drawable/llp_bg_checkbox</item>
+    </style>
+
+</resources>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ripple xmlns:android="http://schemas.android.com/apk/res/android"
+        android:color="#B3FFFFFF">
+
+    <item android:drawable="@drawable/llp_primary_button_bg_enabled"/>
+
+</ripple>

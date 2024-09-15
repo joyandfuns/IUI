@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="llp_black">#FF000000</color>
+    <color name="llp_white">#FFFFFFFF</color>
+
+    <color name="llp_primary_teal">#31728C</color>
+    <color name="llp_primary_teal_disable">#A631728C</color>
+    <color name="llp_body_text_1">#5C7183</color>
+    <color name="llp_alert_red">#E13A44</color>
+</resources>

@@ -8,7 +8,7 @@
     <fragment
         android:id="@+id/LandingPageFragment"
         android:name="com.aom_ai.uc_component.LandingPageFragment"
-        android:label="@string/landing_page_fragment_label"
+        android:label="@string/llp_landing_page_fragment_label"
         tools:layout="@layout/fragment_landing_page">
 
         <action
@@ -24,7 +24,7 @@
     <fragment
         android:id="@+id/SignUpFragment"
         android:name="com.aom_ai.uc_component.SignUpFragment"
-        android:label="@string/sign_up_fragment_label"
+        android:label="@string/llp_sign_up_fragment_label"
         tools:layout="@layout/fragment_sign_up">
 
         <action
@@ -41,7 +41,7 @@
     <fragment
         android:id="@+id/SignInFragment"
         android:name="com.aom_ai.uc_component.SignInFragment"
-        android:label="@string/sign_in_fragment_label"
+        android:label="@string/llp_sign_in_fragment_label"
         tools:layout="@layout/fragment_sign_in">
 
         <action
@@ -56,7 +56,7 @@
     <fragment
         android:id="@+id/UserInfoEntryFragment"
         android:name="com.aom_ai.uc_component.UserInfoEntryFragment"
-        android:label="@string/user_info_entry_fragment_label"
+        android:label="@string/llp_user_info_entry_fragment_label"
         tools:layout="@layout/fragment_user_info_entry">
 
         <action
@@ -67,7 +67,7 @@
     <fragment
         android:id="@+id/EmailVerificationFragment"
         android:name="com.aom_ai.uc_component.EmailVerificationFragment"
-        android:label="@string/email_verification_fragment_label"
+        android:label="@string/llp_email_verification_fragment_label"
         tools:layout="@layout/fragment_email_verification">
 
         <action
@@ -78,7 +78,7 @@
     <fragment
         android:id="@+id/PasswordSetupFragment"
         android:name="com.aom_ai.uc_component.PasswordSetupFragment"
-        android:label="@string/password_setup_fragment_label"
+        android:label="@string/llp_password_setup_fragment_label"
         tools:layout="@layout/fragment_password_setup">
 
         <action
@@ -89,7 +89,7 @@
     <fragment
         android:id="@+id/WelcomeFragment"
         android:name="com.aom_ai.uc_component.WelcomeFragment"
-        android:label="@string/welcome_fragment_label"
+        android:label="@string/llp_welcome_fragment_label"
         tools:layout="@layout/fragment_welcome">
 
         <action
@@ -100,7 +100,7 @@
     <fragment
         android:id="@+id/ResetPasswordFragment"
         android:name="com.aom_ai.uc_component.ResetPasswordFragment"
-        android:label="@string/reset_password_fragment_label"
+        android:label="@string/llp_reset_password_fragment_label"
         tools:layout="@layout/fragment_reset_password">
 
         <action

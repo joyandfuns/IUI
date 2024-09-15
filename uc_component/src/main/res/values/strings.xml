@@ -1,20 +1,25 @@
 <resources>
 
     <!-- Strings used for fragments for navigation -->
-    <string name="landing_page_fragment_label">Landing Page Fragment</string>
-    <string name="sign_up_fragment_label">Sign Up Fragment</string>
-    <string name="sign_in_fragment_label">Sign In Fragment</string>
-    <string name="user_info_entry_fragment_label">UserInfo Entry Fragment</string>
-    <string name="email_verification_fragment_label">Email Verification Fragment</string>
-    <string name="password_setup_fragment_label">Password Setup Fragment</string>
-    <string name="welcome_fragment_label">Welcome Fragment</string>
-    <string name="reset_password_fragment_label">Reset Password Fragment</string>
-    <string name="next">Next</string>
-    <string name="previous">Previous</string>
-    <string name="sign_in">Sign in</string>
-    <string name="join_with_email">Join with email</string>
-    <string name="join">Join</string>
-    <string name="reset_my_password">Reset my password</string>
-    <string name="sign_in_automatically">Sign in automatically</string>
+    <string name="llp_landing_page_fragment_label">Landing Page Fragment</string>
+    <string name="llp_sign_up_fragment_label">Sign Up Fragment</string>
+    <string name="llp_sign_in_fragment_label">Sign In Fragment</string>
+    <string name="llp_user_info_entry_fragment_label">UserInfo Entry Fragment</string>
+    <string name="llp_email_verification_fragment_label">Email Verification Fragment</string>
+    <string name="llp_password_setup_fragment_label">Password Setup Fragment</string>
+    <string name="llp_welcome_fragment_label">Welcome Fragment</string>
+    <string name="llp_reset_password_fragment_label">Reset Password Fragment</string>
+    <string name="llp_next">Next</string>
+    <string name="llp_previous">Previous</string>
+    <string name="llp_sign_in">Sign in</string>
+    <string name="llp_join_with_email">Join with email</string>
+    <string name="llp_join">Join</string>
+    <string name="llp_reset_my_password">Reset my password</string>
+    <string name="llp_sign_in_automatically">Sign in automatically</string>
+    <string name="llp_join_our_community">Join our community</string>
+    <string name="llp_aom_ai_description">aom-ai enables you to gain valuable new knowledge and skills to help you in your work.</string>
+    <string name="llp_already_a_member">Already a member?</string>
+    <string name="llp_confirmation_age_over_18">I am over 18 years of age.</string>
+    <string name="llp_confirmation_work_eligibility_thailand">I am eligible to work in Thailand.</string>
 
 </resources>

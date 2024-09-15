@@ -6,29 +6,70 @@
     android:layout_height="match_parent"
     tools:context=".LandingPageFragment">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:orientation="vertical"
         android:padding="16dp">
 
-        <Button
-            android:id="@+id/button_next"
-            android:layout_width="wrap_content"
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/LLPHeader"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/next"
-            app:layout_constraintBottom_toTopOf="@id/button_sign_in"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:text="@string/llp_join_our_community"
+            />
 
-        <Button
-            android:id="@+id/button_sign_in"
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/LLPBody2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:gravity="center"
+            android:text="@string/llp_aom_ai_description"
+            />
+
+        <CheckBox
+            android:id="@+id/checkbox_age_over_18"
+            style="@style/LLPCheckbox"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/sign_in"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/button_next" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            android:layout_marginTop="42dp"
+            android:paddingStart="10dp"
+            android:text="@string/llp_confirmation_age_over_18"/>
+
+        <CheckBox
+            android:id="@+id/checkbox_work_eligibility_thailand"
+            style="@style/LLPCheckbox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="36dp"
+            android:paddingStart="10dp"
+            android:text="@string/llp_confirmation_work_eligibility_thailand"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            style="@style/LLPButton.Primary"
+            android:id="@+id/button_next"
+            android:layout_marginTop="42dp"
+            android:text="@string/llp_next"
+            />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/LLPBodyBold2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:gravity="center"
+            android:text="@string/llp_already_a_member"
+            />
+
+        <androidx.appcompat.widget.AppCompatButton
+            style="@style/LLPButton.Secondary"
+            android:id="@+id/button_sign_in"
+            android:layout_marginTop="16dp"
+            android:text="@string/llp_sign_in"
+            />
+
+    </LinearLayout>
 </androidx.core.widget.NestedScrollView>
