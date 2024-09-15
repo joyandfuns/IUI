@@ -1,0 +1,15 @@
+<resources>
+
+    <!-- Strings used for fragments for navigation -->
+    <string name="landing_page_fragment_label">Landing Page Fragment</string>
+    <string name="sign_up_fragment_label">Sign Up Fragment</string>
+    <string name="sign_in_fragment_label">Sign In Fragment</string>
+    <string name="user_info_entry_fragment_label">UserInfo Entry Fragment</string>
+    <string name="email_verification_fragment_label">Email Verification Fragment</string>
+    <string name="password_setup_fragment_label">Password Setup Fragment</string>
+    <string name="welcome_fragment_label">Welcome Fragment</string>
+    <string name="reset_password_fragment_label">Reset Password Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+</resources>
