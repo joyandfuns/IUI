@@ -4,14 +4,14 @@
     <!-- ToolbarTitle -->
     <style name="LLPToolbarTitle">
         <item name="android:textSize">16sp</item>
-        <item name="android:textStyle">bold</item>
+        <item name="android:fontFamily">@font/notosans_extrabold</item>
         <item name="android:textColor">@color/llp_black</item>
     </style>
 
     <!-- Header -->
     <style name="LLPHeader">
         <item name="android:textSize">20sp</item>
-        <item name="android:textStyle">bold</item>
+        <item name="android:fontFamily">@font/notosans_extrabold</item>
         <item name="android:textColor">@color/llp_black</item>
     </style>
 
@@ -19,12 +19,13 @@
     <style name="LLPBody1">
         <item name="android:textSize">18sp</item>
         <item name="android:textColor">@color/llp_body_text_1</item>
+        <item name="android:fontFamily">@font/notosans_regular</item>
     </style>
 
     <!-- BodyBold1 -->
     <style name="LLPBodyBold1">
         <item name="android:textSize">18sp</item>
-        <item name="android:textStyle">bold</item>
+        <item name="android:fontFamily">@font/notosans_extrabold</item>
         <item name="android:textColor">@color/llp_black</item>
     </style>
 
@@ -32,12 +33,13 @@
     <style name="LLPBody2">
         <item name="android:textSize">16sp</item>
         <item name="android:textColor">@color/llp_body_text_1</item>
+        <item name="android:fontFamily">@font/notosans_regular</item>
     </style>
 
     <!-- BodyBold2 -->
     <style name="LLPBodyBold2">
         <item name="android:textSize">16sp</item>
-        <item name="android:textStyle">bold</item>
+        <item name="android:fontFamily">@font/notosans_extrabold</item>
         <item name="android:textColor">@color/llp_black</item>
     </style>
 
@@ -45,12 +47,13 @@
     <style name="LLPBody3">
         <item name="android:textSize">14sp</item>
         <item name="android:textColor">@color/llp_body_text_1</item>
+        <item name="android:fontFamily">@font/notosans_regular</item>
     </style>
 
     <!-- BodyBold3 -->
     <style name="LLPBodyBold3">
         <item name="android:textSize">14sp</item>
-        <item name="android:textStyle">bold</item>
+        <item name="android:fontFamily">@font/notosans_extrabold</item>
         <item name="android:textColor">@color/llp_black</item>
     </style>
 
@@ -58,12 +61,13 @@
     <style name="LLPBody4">
         <item name="android:textSize">12sp</item>
         <item name="android:textColor">@color/llp_body_text_1</item>
+        <item name="android:fontFamily">@font/notosans_regular</item>
     </style>
 
     <!-- BodyBold4 -->
     <style name="LLPBodyBold4">
         <item name="android:textSize">12sp</item>
-        <item name="android:textStyle">bold</item>
+        <item name="android:fontFamily">@font/notosans_extrabold</item>
         <item name="android:textColor">@color/llp_black</item>
     </style>
 
@@ -76,7 +80,7 @@
         <item name="android:paddingTop">13dp</item>
         <item name="android:paddingBottom">13dp</item>
         <item name="android:textSize">16sp</item>
-        <item name="android:textStyle">bold</item>
+        <item name="android:fontFamily">@font/notosans_extrabold</item>
     </style>
 
     <!-- Primary Button -->
@@ -97,7 +101,7 @@
     <style name="LLPCheckbox">
         <item name="android:textSize">10sp</item>
         <item name="android:textColor">@color/llp_body_text_1</item>
-        <item name="android:textStyle">bold</item>
+        <item name="android:fontFamily">@font/notosans_extrabold</item>
         <item name="android:button">@drawable/llp_bg_checkbox</item>
     </style>
 
