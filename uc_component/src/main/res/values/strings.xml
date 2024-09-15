@@ -1,6 +1,5 @@
 <resources>
 
-    <!-- Strings used for fragments for navigation -->
     <string name="llp_landing_page_fragment_label">Landing Page Fragment</string>
     <string name="llp_sign_up_fragment_label">Sign Up Fragment</string>
     <string name="llp_sign_in_fragment_label">Sign In Fragment</string>
@@ -21,5 +20,6 @@
     <string name="llp_already_a_member">Already a member?</string>
     <string name="llp_confirmation_age_over_18">I am over 18 years of age.</string>
     <string name="llp_confirmation_work_eligibility_thailand">I am eligible to work in Thailand.</string>
+    <string name="llp_back">Back</string>
 
 </resources>

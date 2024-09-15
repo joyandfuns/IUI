@@ -1,0 +1,24 @@
+<resources>
+
+    <string name="llp_landing_page_fragment_label">หน้าแรก</string>
+    <string name="llp_sign_up_fragment_label">หน้าลงทะเบียน</string>
+    <string name="llp_sign_in_fragment_label">หน้าเข้าสู่ระบบ</string>
+    <string name="llp_user_info_entry_fragment_label">หน้ากรอกข้อมูลผู้ใช้</string>
+    <string name="llp_email_verification_fragment_label">หน้ายืนยันอีเมล</string>
+    <string name="llp_password_setup_fragment_label">หน้าตั้งรหัสผ่าน</string>
+    <string name="llp_welcome_fragment_label">หน้าต้อนรับ</string>
+    <string name="llp_reset_password_fragment_label">หน้ารีเซ็ตรหัสผ่าน</string>
+    <string name="llp_next">ถัดไป</string>
+    <string name="llp_previous">ก่อนหน้า</string>
+    <string name="llp_sign_in">เข้าสู่ระบบ</string>
+    <string name="llp_join_with_email">สมัครด้วยอีเมล</string>
+    <string name="llp_join">เข้าร่วม</string>
+    <string name="llp_reset_my_password">รีเซ็ตรหัสผ่านของฉัน</string>
+    <string name="llp_sign_in_automatically">เข้าสู่ระบบอัตโนมัติ</string>
+    <string name="llp_join_our_community">เข้าร่วมชุมชนของเรา</string>
+    <string name="llp_aom_ai_description">aom-ai ช่วยให้คุณได้รับความรู้และทักษะใหม่ๆ ที่มีคุณค่าเพื่อช่วยคุณในการทำงาน</string>
+    <string name="llp_already_a_member">เป็นสมาชิกอยู่แล้ว?</string>
+    <string name="llp_confirmation_age_over_18">ฉันอายุมากกว่า 18 ปี</string>
+    <string name="llp_confirmation_work_eligibility_thailand">ฉันมีสิทธิ์ทำงานในประเทศไทย</string>
+
+</resources>

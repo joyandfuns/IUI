@@ -1,0 +1,24 @@
+<resources>
+
+    <string name="llp_landing_page_fragment_label">登陆页面</string>
+    <string name="llp_sign_up_fragment_label">注册页面</string>
+    <string name="llp_sign_in_fragment_label">登录页面</string>
+    <string name="llp_user_info_entry_fragment_label">用户信息输入页面</string>
+    <string name="llp_email_verification_fragment_label">邮箱验证页面</string>
+    <string name="llp_password_setup_fragment_label">密码设置页面</string>
+    <string name="llp_welcome_fragment_label">欢迎页面</string>
+    <string name="llp_reset_password_fragment_label">重置密码页面</string>
+    <string name="llp_next">下一步</string>
+    <string name="llp_previous">上一步</string>
+    <string name="llp_sign_in">登录</string>
+    <string name="llp_join_with_email">使用邮箱注册</string>
+    <string name="llp_join">加入</string>
+    <string name="llp_reset_my_password">重置我的密码</string>
+    <string name="llp_sign_in_automatically">自动登录</string>
+    <string name="llp_join_our_community">加入我们的社区</string>
+    <string name="llp_aom_ai_description">aom-ai 使您能够获得宝贵的新知识和技能，帮助您在工作中取得成功。</string>
+    <string name="llp_already_a_member">已经是会员？</string>
+    <string name="llp_confirmation_age_over_18">我已年满18岁。</string>
+    <string name="llp_confirmation_work_eligibility_thailand">我有资格在泰国工作。</string>
+
+</resources>
