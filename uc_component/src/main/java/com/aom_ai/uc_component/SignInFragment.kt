@@ -33,10 +33,7 @@ class SignInFragment : Fragment() {
 
         }
         binding.buttonJoin.setOnClickListener {
-            findNavController().safeNavigateWithArgs(
-                R.id.action_SignInFragment_to_SignUpFragment,
-                null
-            )
+            findNavController().popBackStack(R.id.LandingPageFragment, false)
         }
         binding.buttonResetPassword.setOnClickListener {
             findNavController().safeNavigateWithArgs(

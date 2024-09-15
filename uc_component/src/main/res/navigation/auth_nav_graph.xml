@@ -33,7 +33,9 @@
 
         <action
             android:id="@+id/action_SignUpFragment_to_SignInFragment"
-            app:destination="@id/SignInFragment" />
+            app:destination="@id/SignInFragment"
+            app:popUpTo="@id/LandingPageFragment"
+            app:popUpToInclusive="false"/>
     </fragment>
 
     <fragment
