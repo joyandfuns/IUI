@@ -70,7 +70,7 @@
 
         <action
             android:id="@+id/action_EmailVerificationFragment_to_PasswordSetupFragment"
-            app:destination="@id/LandingPageFragment" />
+            app:destination="@id/PasswordSetupFragment" />
     </fragment>
 
     <fragment

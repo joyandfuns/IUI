@@ -29,8 +29,14 @@ class EmailVerificationFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.buttonSecond.setOnClickListener {
-            findNavController().navigate(R.id.action_EmailVerificationFragment_to_PasswordSetupFragment)
+        binding.buttonPrevious.setOnClickListener {
+            findNavController().popBackStack()
+        }
+        binding.buttonNext.setOnClickListener {
+            findNavController().safeNavigateWithArgs(
+                R.id.action_EmailVerificationFragment_to_PasswordSetupFragment,
+                null
+            )
         }
     }
 

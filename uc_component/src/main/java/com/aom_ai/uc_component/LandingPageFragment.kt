@@ -29,11 +29,17 @@ class LandingPageFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.buttonFirst.setOnClickListener {
-            findNavController().navigate(R.id.action_LandingPageFragment_to_SignUpFragment)
+        binding.buttonNext.setOnClickListener {
+            findNavController().safeNavigateWithArgs(
+                R.id.action_LandingPageFragment_to_SignUpFragment,
+                null
+            )
         }
-        binding.buttonSecond.setOnClickListener {
-            findNavController().navigate(R.id.action_LandingPageFragment_to_SignInFragment)
+        binding.buttonSignIn.setOnClickListener {
+            findNavController().safeNavigateWithArgs(
+                R.id.action_LandingPageFragment_to_SignInFragment,
+                null
+            )
         }
     }
 

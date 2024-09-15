@@ -29,11 +29,20 @@ class SignInFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.buttonFirst.setOnClickListener {
-            findNavController().navigate(R.id.action_SignInFragment_to_SignUpFragment)
+        binding.buttonSignIn.setOnClickListener {
+
         }
-        binding.buttonSecond.setOnClickListener {
-            findNavController().navigate(R.id.action_SignInFragment_to_ResetPasswordFragment)
+        binding.buttonJoin.setOnClickListener {
+            findNavController().safeNavigateWithArgs(
+                R.id.action_SignInFragment_to_SignUpFragment,
+                null
+            )
+        }
+        binding.buttonResetPassword.setOnClickListener {
+            findNavController().safeNavigateWithArgs(
+                R.id.action_SignInFragment_to_ResetPasswordFragment,
+                null
+            )
         }
     }
 

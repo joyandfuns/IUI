@@ -29,11 +29,17 @@ class SignUpFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.buttonFirst.setOnClickListener {
-            findNavController().navigate(R.id.action_SignUpFragment_to_UserInfoEntryFragment)
+        binding.buttonJoinWithEmail.setOnClickListener {
+            findNavController().safeNavigateWithArgs(
+                R.id.action_SignUpFragment_to_UserInfoEntryFragment,
+                null
+            )
         }
-        binding.buttonSecond.setOnClickListener {
-            findNavController().navigate(R.id.action_SignUpFragment_to_SignInFragment)
+        binding.buttonSignIn.setOnClickListener {
+            findNavController().safeNavigateWithArgs(
+                R.id.action_SignUpFragment_to_SignInFragment,
+                null
+            )
         }
     }
 

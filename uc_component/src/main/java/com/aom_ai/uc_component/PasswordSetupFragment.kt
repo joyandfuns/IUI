@@ -29,8 +29,14 @@ class PasswordSetupFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.buttonSecond.setOnClickListener {
-            findNavController().navigate(R.id.action_PasswordSetupFragment_to_WelcomeFragment)
+        binding.buttonPrevious.setOnClickListener {
+            findNavController().popBackStack(R.id.UserInfoEntryFragment, false)
+        }
+        binding.buttonNext.setOnClickListener {
+            findNavController().safeNavigateWithArgs(
+                R.id.action_PasswordSetupFragment_to_WelcomeFragment,
+                null
+            )
         }
     }
 

@@ -11,5 +11,10 @@
     <string name="reset_password_fragment_label">Reset Password Fragment</string>
     <string name="next">Next</string>
     <string name="previous">Previous</string>
+    <string name="sign_in">Sign in</string>
+    <string name="join_with_email">Join with email</string>
+    <string name="join">Join</string>
+    <string name="reset_my_password">Reset my password</string>
+    <string name="sign_in_automatically">Sign in automatically</string>
 
 </resources>

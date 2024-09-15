@@ -29,8 +29,11 @@ class ResetPasswordFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.buttonSecond.setOnClickListener {
-            findNavController().navigate(R.id.action_ResetPasswordFragment_to_EmailVerificationFragment)
+        binding.buttonNext.setOnClickListener {
+            findNavController().safeNavigateWithArgs(
+                R.id.action_ResetPasswordFragment_to_EmailVerificationFragment,
+                null
+            )
         }
     }
 
