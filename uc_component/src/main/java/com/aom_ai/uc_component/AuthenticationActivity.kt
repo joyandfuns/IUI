@@ -1,5 +1,6 @@
 package com.aom_ai.uc_component
 
+import android.graphics.Color
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
@@ -7,6 +8,7 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import com.aom_ai.uc_component.databinding.ActivityAuthenticationBinding
+import com.aom_ai.uc_component.utils.StatusBarCompat
 
 class AuthenticationActivity : AppCompatActivity() {
 
@@ -15,6 +17,7 @@ class AuthenticationActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        StatusBarCompat.setStatusBarStyle(this, Color.WHITE, true)
 
         binding = ActivityAuthenticationBinding.inflate(layoutInflater)
         setContentView(binding.root)
