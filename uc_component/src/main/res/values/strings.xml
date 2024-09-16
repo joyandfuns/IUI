@@ -21,5 +21,10 @@
     <string name="llp_confirmation_age_over_18">I am over 18 years of age.</string>
     <string name="llp_confirmation_work_eligibility_thailand">I am eligible to work in Thailand.</string>
     <string name="llp_back">Back</string>
+    <string name="llp_join_options_description">It\'s quick and easy to join with your Google or Facebook account. Alternatively, you could join using your email address.</string>
+    <string name="llp_accept_terms_and_privacy">I have read and agree to the Terms of Service &#10;and Privacy Policy</string>
+    <string name="llp_join_with_google">Join with Google</string>
+    <string name="llp_join_with_facebook">Join with Facebook</string>
+    <string name="llp_join_with_line">Join with Line</string>
 
 </resources>

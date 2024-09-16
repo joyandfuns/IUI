@@ -88,6 +88,7 @@
         <item name="android:layout_width">match_parent</item>
         <item name="android:background">@drawable/llp_primary_button</item>
         <item name="android:textColor">@color/llp_white</item>
+        <item name="android:stateListAnimator">@null</item>
     </style>
 
     <!-- Secondary Button -->
@@ -95,6 +96,7 @@
         <item name="android:layout_width">match_parent</item>
         <item name="android:background">@drawable/llp_secondary_button</item>
         <item name="android:textColor">@color/llp_primary_teal</item>
+        <item name="android:stateListAnimator">@null</item>
     </style>
 
     <!-- Checkbox -->
@@ -103,6 +105,13 @@
         <item name="android:textColor">@color/llp_body_text_1</item>
         <item name="android:fontFamily">@font/notosans_extrabold</item>
         <item name="android:button">@drawable/llp_bg_checkbox</item>
+    </style>
+
+    <!-- SSOButton -->
+    <style name="LLPSSOButton">
+        <item name="android:textSize">16sp</item>
+        <item name="android:fontFamily">@font/notosans_extrabold</item>
+        <item name="android:textColor">@color/llp_black</item>
     </style>
 
 </resources>
