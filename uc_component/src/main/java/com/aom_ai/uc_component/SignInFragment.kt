@@ -6,9 +6,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import com.aom_ai.uc_component.constant.ARG_EMAIL_ADDRESS
 import com.aom_ai.uc_component.databinding.FragmentSignInBinding
+import com.aom_ai.uc_component.dialog.LLPAgreementDialog
 
 class SignInFragment : Fragment() {
 
@@ -46,10 +48,27 @@ class SignInFragment : Fragment() {
                 bundle
             )
         }
+        binding.flGoogleSignIn.setOnClickListener {
+            checkAgreement {
+                Toast.makeText(context, "Google Sign In clicked", Toast.LENGTH_SHORT).show()
+            }
+        }
+        binding.flFacebookSignIn.setOnClickListener {
+            checkAgreement {
+                Toast.makeText(context, "Facebook Sign In clicked", Toast.LENGTH_SHORT).show()
+            }
+        }
+        binding.flLineSignIn.setOnClickListener {
+            checkAgreement {
+                Toast.makeText(context, "Line Sign In clicked", Toast.LENGTH_SHORT).show()
+            }
+        }
         binding.buttonSignIn.setOnClickListener {
-            if (checkRequiredFieldsFilled()) {
-                activity?.startActivity(Intent(activity, FakeHomeActivity::class.java))
-                activity?.finish()
+            checkAgreement {
+                if (checkRequiredFieldsFilled()) {
+                    activity?.startActivity(Intent(activity, FakeHomeActivity::class.java))
+                    activity?.finish()
+                }
             }
         }
     }
@@ -68,11 +87,11 @@ class SignInFragment : Fragment() {
     private fun checkRequiredFieldsFilled(): Boolean {
         var isValid = true
         if (binding.inputEmailAddress.getText().isEmpty()) {
-            binding.inputEmailAddress.showInValidState(getString(R.string.llp_prompt_enter_last_name))
+            binding.inputEmailAddress.showInValidState(getString(R.string.llp_prompt_enter_email_address))
             isValid = false
         }
         if (binding.inputPassword.getText().isEmpty()) {
-            binding.inputPassword.showInValidState(getString(R.string.llp_prompt_enter_email_address))
+            binding.inputPassword.showInValidState(getString(R.string.llp_prompt_enter_password))
             isValid = false
         }
         if (!isValid) {
@@ -81,5 +100,11 @@ class SignInFragment : Fragment() {
             binding.errorBanner.visibility = View.GONE
         }
         return isValid
+    }
+
+    private fun checkAgreement(onNext: () -> Unit) {
+        LLPAgreementDialog.newInstance {
+            onNext()
+        }.show(childFragmentManager, LLPAgreementDialog::class.java.simpleName)
     }
 }

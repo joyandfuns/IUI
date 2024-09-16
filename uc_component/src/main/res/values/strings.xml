@@ -10,6 +10,8 @@
     <string name="llp_reset_password_fragment_label">Reset Password Fragment</string>
     <string name="llp_next">Next</string>
     <string name="llp_previous">Previous</string>
+    <string name="llp_cancel">Cancel</string>
+    <string name="llp_proceed">Proceed</string>
     <string name="llp_sign_in">Sign in</string>
     <string name="llp_join_with_email">Join with email</string>
     <string name="llp_join">Join</string>
@@ -69,9 +71,12 @@
     <string name="llp_prompt_enter_first_name">Please enter your first name.</string>
     <string name="llp_prompt_enter_last_name">Please enter your last name.</string>
     <string name="llp_prompt_enter_email_address">Please enter your email address.</string>
+    <string name="llp_prompt_enter_password">Please enter your password.</string>
     <string name="llp_prompt_enter_verification_code">Please enter your verification code.</string>
     <string name="llp_password_requirements_description">The length of your password should be 8-16 characters.\nNo spaces are allowed.\nYou must include at least three of the following four elements:\n - an uppercase letter\n - a lowercase letter\n - a number\n - an English symbol (such as !%$&amp;).\nThere must be no consecutive or repeated combinations in the password (such as abc123$$$).\nYour password cannot include your email address.</string>
     <string name="llp_hint_send_verification_code">Note: Clicking Next step will send a verification code to the email address above.</string>
     <string name="llp_error_invalid_email_format">Please enter a valid email address. An example would be: name@email.com</string>
     <string name="llp_error_invalid_password_format">Your password does not meet the format requirements. Please amend.</string>
+    <string name="llp_agreement_dialog_title">Terms of Service\nand Privacy Policy</string>
+    <string name="llp_prompt_completing_checkbox">Please confirm your acceptance by completing the checkbox below.</string>
 </resources>

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:background="@drawable/llp_bg_common_dialog"
+    android:minWidth="350dp"
+    android:orientation="vertical"
+    tools:layout_width="350dp"
+    tools:ignore="MissingDefaultResource">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/llp_bg_agreement_dialog_header"
+        android:padding="16dp"
+        >
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/LLPHeader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/llp_agreement_dialog_title"
+            android:textColor="@color/llp_white"
+            android:layout_gravity="center"/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivClose"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/llp_ic_close_white"
+            android:layout_gravity="end|center_vertical"/>
+
+    </FrameLayout>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:src="@drawable/llp_ic_info_orange_large"
+        android:layout_gravity="center_horizontal"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        style="@style/LLPHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:textColor="@color/llp_body_text_1"
+        android:text="@string/llp_agreement_dialog_title"
+        android:layout_gravity="center_horizontal"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        style="@style/LLPBody1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/llp_prompt_completing_checkbox"
+        android:gravity="center_horizontal"/>
+
+    <com.aom_ai.uc_component.view.LLPValidatableCheckBox
+        android:id="@+id/checkbox_accept_terms_and_privacy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:layout_marginHorizontal="16dp"
+        app:text="@string/llp_accept_terms_and_privacy"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="32dp"
+        android:layout_marginHorizontal="16dp"
+        >
+
+        <androidx.appcompat.widget.AppCompatButton
+            style="@style/LLPButton.Secondary"
+            android:id="@+id/button_cancel"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="@string/llp_cancel"
+            />
+
+        <androidx.appcompat.widget.AppCompatButton
+            style="@style/LLPButton.Primary"
+            android:id="@+id/button_proceed"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_marginStart="16dp"
+            android:text="@string/llp_proceed"
+            />
+
+    </LinearLayout>
+
+</LinearLayout>
