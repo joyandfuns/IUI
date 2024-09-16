@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.activity.OnBackPressedCallback
 import androidx.navigation.fragment.findNavController
 import com.aom_ai.uc_component.constant.ARG_EMAIL_ADDRESS
 import com.aom_ai.uc_component.constant.ARG_IS_RESET_PASSWORD
@@ -18,8 +19,27 @@ class EmailVerificationFragment : Fragment() {
     // onDestroyView.
     private val binding get() = _binding!!
 
+    private var onBackPressedCallback: OnBackPressedCallback? = null
+
     private var emailAddress: String = ""
     private var isResetPassword: Boolean = false
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+        onBackPressedCallback = object : OnBackPressedCallback(true) {
+            override fun handleOnBackPressed() {
+                if (isResetPassword) {
+                    findNavController().popBackStack(R.id.SignInFragment, false)
+                } else {
+                    findNavController().popBackStack()
+                }
+            }
+        }
+        onBackPressedCallback?.let {
+            requireActivity().onBackPressedDispatcher.addCallback(this, it)
+        }
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -84,5 +104,10 @@ class EmailVerificationFragment : Fragment() {
             return false
         }
         return true
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        onBackPressedCallback?.remove()
     }
 }

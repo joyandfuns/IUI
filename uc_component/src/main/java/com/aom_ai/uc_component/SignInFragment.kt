@@ -1,5 +1,6 @@
 package com.aom_ai.uc_component
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -44,6 +45,10 @@ class SignInFragment : Fragment() {
                 R.id.action_SignInFragment_to_ResetPasswordFragment,
                 bundle
             )
+        }
+        binding.buttonSignIn.setOnClickListener {
+            activity?.startActivity(Intent(activity, FakeHomeActivity::class.java))
+            activity?.finish()
         }
     }
 

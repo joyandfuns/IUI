@@ -3,6 +3,9 @@
 
     <application>
         <activity
+            android:name=".FakeHomeActivity"
+            android:exported="false" />
+        <activity
             android:name=".AuthenticationActivity"
             android:exported="false"
             android:theme="@style/Theme.Uc_component" />

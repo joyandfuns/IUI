@@ -1,10 +1,13 @@
 package com.aom_ai.uc_component
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.activity.OnBackPressedCallback
+import androidx.navigation.fragment.findNavController
 import com.aom_ai.uc_component.constant.ARG_IS_RESET_PASSWORD
 import com.aom_ai.uc_component.databinding.FragmentWelcomeBinding
 
@@ -16,7 +19,26 @@ class WelcomeFragment : Fragment() {
     // onDestroyView.
     private val binding get() = _binding!!
 
+    private var onBackPressedCallback: OnBackPressedCallback? = null
+
     private var isResetPassword: Boolean = false
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+        onBackPressedCallback = object : OnBackPressedCallback(true) {
+            override fun handleOnBackPressed() {
+                if (isResetPassword) {
+                    findNavController().popBackStack(R.id.SignInFragment, false)
+                } else {
+                    findNavController().popBackStack(R.id.LandingPageFragment, false)
+                }
+            }
+        }
+        onBackPressedCallback?.let {
+            requireActivity().onBackPressedDispatcher.addCallback(this, it)
+        }
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -42,6 +64,11 @@ class WelcomeFragment : Fragment() {
             binding.tvSuccess.text = getString(R.string.llp_account_create_success)
             binding.tvHint.text = getString(R.string.llp_account_creation_success_message)
         }
+
+        binding.buttonSignIn.setOnClickListener {
+            activity?.startActivity(Intent(activity, FakeHomeActivity::class.java))
+            activity?.finish()
+        }
     }
 
     override fun onResume() {
@@ -57,5 +84,10 @@ class WelcomeFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        onBackPressedCallback?.remove()
     }
 }

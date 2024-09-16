@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.activity.OnBackPressedCallback
 import androidx.navigation.fragment.findNavController
 import com.aom_ai.uc_component.constant.ARG_IS_RESET_PASSWORD
 import com.aom_ai.uc_component.databinding.FragmentPasswordSetupBinding
@@ -17,7 +18,26 @@ class PasswordSetupFragment : Fragment() {
     // onDestroyView.
     private val binding get() = _binding!!
 
+    private var onBackPressedCallback: OnBackPressedCallback? = null
+
     private var isResetPassword: Boolean = false
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+        onBackPressedCallback = object : OnBackPressedCallback(true) {
+            override fun handleOnBackPressed() {
+                if (isResetPassword) {
+                    findNavController().popBackStack(R.id.SignInFragment, false)
+                } else {
+                    findNavController().popBackStack(R.id.UserInfoEntryFragment, false)
+                }
+            }
+        }
+        onBackPressedCallback?.let {
+            requireActivity().onBackPressedDispatcher.addCallback(this, it)
+        }
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -77,5 +97,10 @@ class PasswordSetupFragment : Fragment() {
             return false
         }
         return true
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        onBackPressedCallback?.remove()
     }
 }

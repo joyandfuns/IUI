@@ -31,6 +31,7 @@ class MainActivity : AppCompatActivity() {
 
         binding.fab.setOnClickListener {
             startActivity(Intent(this, AuthenticationActivity::class.java))
+            finish()
         }
     }
 
