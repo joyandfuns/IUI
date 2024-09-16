@@ -56,18 +56,15 @@ class LandingPageFragment : Fragment() {
     }
 
     private fun validate(): Boolean {
-        var isValid = true
-//        binding.checkboxAgeOver18.apply {
-//            if (!isChecked) {
-//                isValid = false
-//                setError(true)
-//            } else {
-//                setError(false)
-//            }
-//        }
-        binding.checkboxWorkEligibilityThailand.apply {
-        }
+        val isAgeOver18Checked = binding.checkboxAgeOver18.validate(getString(R.string.llp_prompt_confirm_age))
+        val isWorkEligibilityThailandChecked = binding.checkboxWorkEligibilityThailand.validate(getString(R.string.llp_prompt_confirm_eligibility))
 
-        return isValid
+        val isAllChecked = isAgeOver18Checked && isWorkEligibilityThailandChecked
+        if (!isAllChecked) {
+            binding.errorBanner.visibility = View.VISIBLE
+        } else {
+            binding.errorBanner.visibility = View.GONE
+        }
+        return isAllChecked
     }
 }

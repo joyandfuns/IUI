@@ -58,5 +58,8 @@
     <string name="llp_prompt_enter_email_for_account">Please enter the email address you use for aom-ai.</string>
     <string name="llp_password_save_success">Password successfully saved</string>
     <string name="llp_password_change_confirmation">Congratulations, you can now sign in with your new password.</string>
-
+    <string name="llp_prompt_confirm_age">Please confirm your age.</string>
+    <string name="llp_prompt_confirm_eligibility">Please confirm your eligibility.</string>
+    <string name="llp_error_prefix">Error:&#160;</string>
+    <string name="llp_error_message_review_and_retry">Please review the error messages below and try again.</string>
 </resources>

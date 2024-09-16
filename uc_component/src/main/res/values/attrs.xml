@@ -334,4 +334,12 @@
         </attr>
 
     </declare-styleable>
+
+    <declare-styleable name="LLPValidatableCheckBox">
+        <attr name="text" format="string" />
+    </declare-styleable>
+
+    <declare-styleable name="LLPErrorBanner">
+        <attr name="message" format="string" />
+    </declare-styleable>
 </resources>
