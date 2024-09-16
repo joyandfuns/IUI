@@ -1,7 +1,9 @@
 package com.aom_ai.uc_component
 
 interface IAuthToolbarAction {
-    fun hideBackIcon()
+    fun hideBack()
 
-    fun showBackIcon()
+    fun showBack()
+
+    fun setTitle(title: String)
 }

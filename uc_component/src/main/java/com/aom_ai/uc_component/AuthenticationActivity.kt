@@ -41,11 +41,15 @@ class AuthenticationActivity : AppCompatActivity(), IAuthToolbarAction {
                 || super.onSupportNavigateUp()
     }
 
-    override fun hideBackIcon() {
+    override fun hideBack() {
         binding?.llBack?.visibility = View.GONE
     }
 
-    override fun showBackIcon() {
+    override fun showBack() {
         binding?.llBack?.visibility = View.VISIBLE
+    }
+
+    override fun setTitle(title: String) {
+        binding?.tvToolbarTitle?.text = title
     }
 }

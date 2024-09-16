@@ -39,7 +39,8 @@ class ResetPasswordFragment : Fragment() {
 
     override fun onResume() {
         super.onResume()
-        (activity as? IAuthToolbarAction)?.showBackIcon()
+        (activity as? IAuthToolbarAction)?.showBack()
+        (activity as? IAuthToolbarAction)?.setTitle(getString(R.string.llp_action_back_to_sign_in))
     }
 
     override fun onDestroyView() {

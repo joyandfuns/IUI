@@ -45,7 +45,8 @@ class SignUpFragment : Fragment() {
 
     override fun onResume() {
         super.onResume()
-        (activity as? IAuthToolbarAction)?.showBackIcon()
+        (activity as? IAuthToolbarAction)?.showBack()
+        (activity as? IAuthToolbarAction)?.setTitle(getString(R.string.llp_back))
     }
 
 

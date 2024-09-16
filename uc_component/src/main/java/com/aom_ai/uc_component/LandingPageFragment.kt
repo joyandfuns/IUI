@@ -45,7 +45,7 @@ class LandingPageFragment : Fragment() {
 
     override fun onResume() {
         super.onResume()
-        (activity as? IAuthToolbarAction)?.hideBackIcon()
+        (activity as? IAuthToolbarAction)?.hideBack()
     }
 
     override fun onDestroyView() {

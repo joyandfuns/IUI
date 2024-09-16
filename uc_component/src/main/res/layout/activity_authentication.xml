@@ -36,6 +36,7 @@
 
                 <androidx.appcompat.widget.AppCompatTextView
                     style="@style/LLPHeader"
+                    android:id="@+id/tv_toolbar_title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/llp_back"
