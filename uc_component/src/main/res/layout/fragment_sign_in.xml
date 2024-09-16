@@ -209,6 +209,7 @@
             style="@style/LLPButton.Secondary"
             android:id="@+id/button_join"
             android:layout_marginTop="16dp"
+            android:layout_marginBottom="24dp"
             android:text="@string/llp_join"
             />
 
