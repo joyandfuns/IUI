@@ -33,10 +33,12 @@ class PasswordSetupFragment : Fragment() {
             findNavController().popBackStack(R.id.UserInfoEntryFragment, false)
         }
         binding.buttonNext.setOnClickListener {
-            findNavController().safeNavigateWithArgs(
-                R.id.action_PasswordSetupFragment_to_WelcomeFragment,
-                null
-            )
+            if (checkRequiredFieldsFilled()) {
+                findNavController().safeNavigateWithArgs(
+                    R.id.action_PasswordSetupFragment_to_WelcomeFragment,
+                    null
+                )
+            }
         }
     }
 
@@ -48,5 +50,13 @@ class PasswordSetupFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    private fun checkRequiredFieldsFilled(): Boolean {
+        if (binding.inputPassword.getText().isEmpty()) {
+            binding.inputPassword.showInValidState("Your password does not meet the format requirements. Please amend.")
+            return false
+        }
+        return true
     }
 }

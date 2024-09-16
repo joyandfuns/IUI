@@ -39,5 +39,13 @@
     <string name="llp_verification_code">Verification code</string>
     <string name="llp_resend_verification_code">Resend the verification code</string>
     <string name="llp_verification_email_sent_instructions">A verification email has been sent to \n%1$s.\nPlease check your email for the verification code. Then please enter it in the field below.</string>
+    <string name="llp_set_your_password">Set your password</string>
+    <string name="llp_password_required">Password *</string>
+    <string name="llp_password">Password</string>
+    <string name="llp_confirm_password_required">Confirm password *</string>
+    <string name="llp_confirm_password">Confirm password</string>
+    <string name="llp_password_setup_instructions">Please follow the instructions below while setting your account password.</string>
+    <string name="llp_account_successfully_created">Account successfully created</string>
+    <string name="llp_account_creation_success_message">Congratulations, you can now sign in with your new account.</string>
 
 </resources>
