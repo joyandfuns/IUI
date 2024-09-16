@@ -6,6 +6,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
+import com.aom_ai.uc_component.constant.ARG_EMAIL_ADDRESS
+import com.aom_ai.uc_component.constant.ARG_IS_RESET_PASSWORD
 import com.aom_ai.uc_component.databinding.FragmentResetPasswordBinding
 
 class ResetPasswordFragment : Fragment() {
@@ -15,6 +17,8 @@ class ResetPasswordFragment : Fragment() {
     // This property is only valid between onCreateView and
     // onDestroyView.
     private val binding get() = _binding!!
+
+    private var emailAddress: String = ""
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -29,10 +33,17 @@ class ResetPasswordFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        emailAddress = arguments?.getString(ARG_EMAIL_ADDRESS) ?: ""
+
+        binding.inputEmailAddress.setText(emailAddress)
         binding.buttonNext.setOnClickListener {
+            val bundle = Bundle().apply {
+                putBoolean(ARG_IS_RESET_PASSWORD, true)
+                putString(ARG_EMAIL_ADDRESS, binding.inputEmailAddress.getText())
+            }
             findNavController().safeNavigateWithArgs(
                 R.id.action_ResetPasswordFragment_to_EmailVerificationFragment,
-                null
+                bundle
             )
         }
     }

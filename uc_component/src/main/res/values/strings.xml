@@ -49,12 +49,14 @@
     <string name="llp_confirm_password_required">Confirm password *</string>
     <string name="llp_confirm_password">Confirm password</string>
     <string name="llp_password_setup_instructions">Please follow the instructions below while setting your account password.</string>
-    <string name="llp_account_successfully_created">Account successfully created</string>
+    <string name="llp_account_create_success">Account successfully created</string>
     <string name="llp_account_creation_success_message">Congratulations, you can now sign in with your new account.</string>
     <string name="llp_sign_in_welcome_back">Welcome back \nto your learning journey</string>
     <string name="llp_social_sign_in_account_creation_notice">Signing in with Google, Facebook, Apple or Line will create an account in aom-ai if one does not already exist.</string>
     <string name="llp_email_sign_in_option">or sign in using email</string>
     <string name="llp_action_back_to_sign_in">Back to sign in</string>
     <string name="llp_prompt_enter_email_for_account">Please enter the email address you use for aom-ai.</string>
+    <string name="llp_password_save_success">Password successfully saved</string>
+    <string name="llp_password_change_confirmation">Congratulations, you can now sign in with your new password.</string>
 
 </resources>

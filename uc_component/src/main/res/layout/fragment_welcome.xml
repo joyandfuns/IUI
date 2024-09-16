@@ -32,15 +32,17 @@
 
         <androidx.appcompat.widget.AppCompatTextView
             style="@style/LLPBodyBold1"
+            android:id="@+id/tv_success"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
             android:gravity="center"
-            android:text="@string/llp_account_successfully_created"
+            android:text="@string/llp_account_create_success"
             />
 
         <androidx.appcompat.widget.AppCompatTextView
             style="@style/LLPBody2"
+            android:id="@+id/tv_hint"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"

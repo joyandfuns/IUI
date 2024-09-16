@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
+import com.aom_ai.uc_component.constant.ARG_EMAIL_ADDRESS
 import com.aom_ai.uc_component.databinding.FragmentSignInBinding
 
 class SignInFragment : Fragment() {
@@ -36,9 +37,12 @@ class SignInFragment : Fragment() {
             findNavController().popBackStack(R.id.LandingPageFragment, false)
         }
         binding.tvResetPassword.setOnClickListener {
+            val bundle = Bundle().apply {
+                putString(ARG_EMAIL_ADDRESS, binding.inputEmailAddress.getText())
+            }
             findNavController().safeNavigateWithArgs(
                 R.id.action_SignInFragment_to_ResetPasswordFragment,
-                null
+                bundle
             )
         }
     }
