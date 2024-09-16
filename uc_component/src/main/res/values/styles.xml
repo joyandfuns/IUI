@@ -114,4 +114,19 @@
         <item name="android:textColor">@color/llp_black</item>
     </style>
 
+    <!-- EditText -->
+    <style name="LLPEditText" parent="Widget.AppCompat.EditText">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">48dp</item>
+        <item name="android:paddingStart">16dp</item>
+        <item name="android:paddingEnd">16dp</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:textColor">@color/llp_black</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:fontFamily">@font/notosans_regular</item>
+        <item name="android:background">@drawable/llp_edit_text</item>
+        <item name="android:textColorHint">@color/llp_disable_text</item>
+    </style>
+
 </resources>

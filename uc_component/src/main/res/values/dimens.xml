@@ -1,3 +1,4 @@
 <resources>
     <dimen name="llp_button_corner_radius">50dp</dimen>
+    <dimen name="llp_edit_text_corner_radius">8dp</dimen>
 </resources>

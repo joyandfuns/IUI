@@ -30,10 +30,12 @@ class UserInfoEntryFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.buttonNext.setOnClickListener {
-            findNavController().safeNavigateWithArgs(
-                R.id.action_UserInfoEntryFragment_to_EmailVerificationFragment,
-                null
-            )
+            if (checkRequiredFieldsFilled()) {
+                findNavController().safeNavigateWithArgs(
+                    R.id.action_UserInfoEntryFragment_to_EmailVerificationFragment,
+                    null
+                )
+            }
         }
     }
 
@@ -45,5 +47,13 @@ class UserInfoEntryFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    private fun checkRequiredFieldsFilled(): Boolean {
+        if (binding.inputFirstName.getText().isEmpty()) {
+            binding.inputFirstName.showInValidState("Please enter your first name.")
+            return false
+        }
+        return true
     }
 }
