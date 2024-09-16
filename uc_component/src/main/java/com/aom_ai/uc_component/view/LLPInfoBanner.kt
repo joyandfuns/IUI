@@ -12,54 +12,54 @@ import androidx.core.content.ContextCompat
 import androidx.core.content.res.ResourcesCompat
 import androidx.core.view.setPadding
 import com.aom_ai.uc_component.R
-import com.aom_ai.uc_component.databinding.LlpErrorBannerBinding
+import com.aom_ai.uc_component.databinding.LlpInfoBannerBinding
 import com.aom_ai.uc_component.utils.dpiToPixels
 
-class LLPErrorBanner @JvmOverloads constructor(
+class LLPInfoBanner @JvmOverloads constructor(
     context: Context,
     attrs: AttributeSet? = null,
     defStyleAttr: Int = 0
 ) : LinearLayout(context, attrs, defStyleAttr) {
 
-    private val binding: LlpErrorBannerBinding =
-        LlpErrorBannerBinding.inflate(LayoutInflater.from(context), this)
+    private val binding: LlpInfoBannerBinding =
+        LlpInfoBannerBinding.inflate(LayoutInflater.from(context), this)
 
-    private val errorBoldTypeface: Typeface?
+    private val infoBoldTypeface: Typeface?
 
     init {
         orientation = HORIZONTAL
-        errorBoldTypeface = ResourcesCompat.getFont(context, R.font.notosans_extrabold)
-        background = ContextCompat.getDrawable(context, R.color.llp_light_red)
+        infoBoldTypeface = ResourcesCompat.getFont(context, R.font.notosans_extrabold)
+        background = ContextCompat.getDrawable(context, R.color.llp_light_teal)
         setPadding(dpiToPixels(context, 16f).toInt())
-        val a = context.obtainStyledAttributes(attrs, R.styleable.LLPErrorBanner)
-        val message = a.getString(R.styleable.LLPErrorBanner_llpBannerErrorMessage)
+        val a = context.obtainStyledAttributes(attrs, R.styleable.LLPInfoBanner)
+        val message = a.getString(R.styleable.LLPInfoBanner_llpBannerInfoMessage)
 
-        setErrorMessage(message ?: "")
+        setMessage(message ?: "")
 
         a.recycle()
     }
 
-    fun setErrorMessage(message: String) {
-        val errorPrefix = context.getString(R.string.llp_error_prefix)
-        val fullText = "$errorPrefix$message"
+    fun setMessage(message: String) {
+        val notePrefix = context.getString(R.string.llp_note_prefix)
+        val fullText = "$notePrefix$message"
         val spannableString = SpannableString(fullText)
 
-        // 设置 "Error:" 的样式
+        // 设置 "Info:" 的样式
         spannableString.setSpan(
-            ForegroundColorSpan(ContextCompat.getColor(context, R.color.llp_alert_red)),
+            ForegroundColorSpan(ContextCompat.getColor(context, R.color.llp_primary_teal)),
             0,
-            errorPrefix.length,
+            notePrefix.length,
             Spanned.SPAN_EXCLUSIVE_EXCLUSIVE
         )
-        errorBoldTypeface?.let {
+        infoBoldTypeface?.let {
             spannableString.setSpan(
                 LLPCustomTypefaceSpan(it),
                 0,
-                errorPrefix.length,
+                notePrefix.length,
                 Spanned.SPAN_EXCLUSIVE_EXCLUSIVE
             )
         }
 
-        binding.tvErrorMsg.text = spannableString
+        binding.tvMsg.text = spannableString
     }
 }

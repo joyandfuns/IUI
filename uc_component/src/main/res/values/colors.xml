@@ -5,6 +5,7 @@
 
     <color name="llp_primary_teal">#31728C</color>
     <color name="llp_medium_teal">#81C2DE</color>
+    <color name="llp_light_teal">#EBF3FA</color>
     <color name="llp_primary_teal_disable">#A631728C</color>
     <color name="llp_body_text_1">#5C7183</color>
     <color name="llp_alert_red">#D92635</color>

@@ -37,7 +37,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
             android:visibility="gone"
-            app:message="@string/llp_error_message_review_and_retry"/>
+            app:llpBannerErrorMessage="@string/llp_error_message_review_and_retry"/>
 
         <com.aom_ai.uc_component.view.LLPValidatableCheckBox
             android:id="@+id/checkbox_age_over_18"

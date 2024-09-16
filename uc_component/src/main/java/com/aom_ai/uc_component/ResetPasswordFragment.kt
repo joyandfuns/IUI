@@ -37,14 +37,16 @@ class ResetPasswordFragment : Fragment() {
 
         binding.inputEmailAddress.setText(emailAddress)
         binding.buttonNext.setOnClickListener {
-            val bundle = Bundle().apply {
-                putBoolean(ARG_IS_RESET_PASSWORD, true)
-                putString(ARG_EMAIL_ADDRESS, binding.inputEmailAddress.getText())
+            if (checkRequiredFieldsFilled()) {
+                val bundle = Bundle().apply {
+                    putBoolean(ARG_IS_RESET_PASSWORD, true)
+                    putString(ARG_EMAIL_ADDRESS, binding.inputEmailAddress.getText())
+                }
+                findNavController().safeNavigateWithArgs(
+                    R.id.action_ResetPasswordFragment_to_EmailVerificationFragment,
+                    bundle
+                )
             }
-            findNavController().safeNavigateWithArgs(
-                R.id.action_ResetPasswordFragment_to_EmailVerificationFragment,
-                bundle
-            )
         }
     }
 
@@ -57,5 +59,15 @@ class ResetPasswordFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    private fun checkRequiredFieldsFilled(): Boolean {
+        if (binding.inputEmailAddress.getText().isEmpty()) {
+            binding.inputEmailAddress.showInValidState(getString(R.string.llp_error_invalid_email_format))
+            binding.errorBanner.visibility = View.VISIBLE
+            return false
+        }
+        binding.errorBanner.visibility = View.GONE
+        return true
     }
 }

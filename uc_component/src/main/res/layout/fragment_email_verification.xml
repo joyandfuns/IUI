@@ -49,6 +49,14 @@
             android:text="@string/llp_required_field_indicator"
             />
 
+        <com.aom_ai.uc_component.view.LLPErrorBanner
+            android:id="@+id/error_banner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:visibility="gone"
+            app:llpBannerErrorMessage="@string/llp_error_message_review_and_retry"/>
+
         <androidx.appcompat.widget.AppCompatTextView
             style="@style/LLPBodyBold4"
             android:layout_width="match_parent"

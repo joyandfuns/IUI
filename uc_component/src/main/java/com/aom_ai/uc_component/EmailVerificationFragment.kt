@@ -100,9 +100,11 @@ class EmailVerificationFragment : Fragment() {
 
     private fun checkRequiredFieldsFilled(): Boolean {
         if (binding.inputVerificationCode.getText().isEmpty()) {
-            binding.inputVerificationCode.showInValidState("Please enter your verification code.")
+            binding.inputVerificationCode.showInValidState(getString(R.string.llp_prompt_enter_verification_code))
+            binding.errorBanner.visibility = View.VISIBLE
             return false
         }
+        binding.errorBanner.visibility = View.GONE
         return true
     }
 

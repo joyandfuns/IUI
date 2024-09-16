@@ -71,8 +71,10 @@ class PasswordSetupFragment : Fragment() {
 
         if (isResetPassword) {
             binding.tvTitle.text = getString(R.string.llp_reset_my_password)
+            binding.tvSetPasswordHint.visibility = View.GONE
         } else {
             binding.tvTitle.text = getString(R.string.llp_join_our_community)
+            binding.tvSetPasswordHint.visibility = View.VISIBLE
         }
     }
 
@@ -93,9 +95,11 @@ class PasswordSetupFragment : Fragment() {
 
     private fun checkRequiredFieldsFilled(): Boolean {
         if (binding.inputPassword.getText().isEmpty()) {
-            binding.inputPassword.showInValidState("Your password does not meet the format requirements. Please amend.")
+            binding.inputPassword.showInValidState(getString(R.string.llp_error_invalid_password_format))
+            binding.errorBanner.visibility = View.VISIBLE
             return false
         }
+        binding.errorBanner.visibility = View.GONE
         return true
     }
 

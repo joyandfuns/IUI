@@ -38,10 +38,12 @@ class LandingPageFragment : Fragment() {
             }
         }
         binding.buttonSignIn.setOnClickListener {
-            findNavController().safeNavigateWithArgs(
-                R.id.action_LandingPageFragment_to_SignInFragment,
-                null
-            )
+            if (validate()) {
+                findNavController().safeNavigateWithArgs(
+                    R.id.action_LandingPageFragment_to_SignInFragment,
+                    null
+                )
+            }
         }
     }
 

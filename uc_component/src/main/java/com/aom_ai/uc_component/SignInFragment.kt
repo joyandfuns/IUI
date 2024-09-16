@@ -47,8 +47,10 @@ class SignInFragment : Fragment() {
             )
         }
         binding.buttonSignIn.setOnClickListener {
-            activity?.startActivity(Intent(activity, FakeHomeActivity::class.java))
-            activity?.finish()
+            if (checkRequiredFieldsFilled()) {
+                activity?.startActivity(Intent(activity, FakeHomeActivity::class.java))
+                activity?.finish()
+            }
         }
     }
 
@@ -61,5 +63,23 @@ class SignInFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    private fun checkRequiredFieldsFilled(): Boolean {
+        var isValid = true
+        if (binding.inputEmailAddress.getText().isEmpty()) {
+            binding.inputEmailAddress.showInValidState(getString(R.string.llp_prompt_enter_last_name))
+            isValid = false
+        }
+        if (binding.inputPassword.getText().isEmpty()) {
+            binding.inputPassword.showInValidState(getString(R.string.llp_prompt_enter_email_address))
+            isValid = false
+        }
+        if (!isValid) {
+            binding.errorBanner.visibility = View.VISIBLE
+        } else {
+            binding.errorBanner.visibility = View.GONE
+        }
+        return isValid
     }
 }

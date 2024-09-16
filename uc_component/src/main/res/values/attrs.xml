@@ -340,6 +340,10 @@
     </declare-styleable>
 
     <declare-styleable name="LLPErrorBanner">
-        <attr name="message" format="string" />
+        <attr name="llpBannerErrorMessage" format="string" />
+    </declare-styleable>
+
+    <declare-styleable name="LLPInfoBanner">
+        <attr name="llpBannerInfoMessage" format="string" />
     </declare-styleable>
 </resources>

@@ -55,10 +55,24 @@ class UserInfoEntryFragment : Fragment() {
     }
 
     private fun checkRequiredFieldsFilled(): Boolean {
+        var isValid = true
         if (binding.inputFirstName.getText().isEmpty()) {
-            binding.inputFirstName.showInValidState("Please enter your first name.")
-            return false
+            binding.inputFirstName.showInValidState(getString(R.string.llp_prompt_enter_first_name))
+            isValid = false
         }
-        return true
+        if (binding.inputLastName.getText().isEmpty()) {
+            binding.inputLastName.showInValidState(getString(R.string.llp_prompt_enter_last_name))
+            isValid = false
+        }
+        if (binding.inputEmailAddress.getText().isEmpty()) {
+            binding.inputEmailAddress.showInValidState(getString(R.string.llp_prompt_enter_email_address))
+            isValid = false
+        }
+        if (!isValid) {
+            binding.errorBanner.visibility = View.VISIBLE
+        } else {
+            binding.errorBanner.visibility = View.GONE
+        }
+        return isValid
     }
 }
