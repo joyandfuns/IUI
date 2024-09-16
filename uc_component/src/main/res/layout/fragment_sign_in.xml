@@ -6,39 +6,204 @@
     android:layout_height="match_parent"
     tools:context=".SignUpFragment">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:orientation="vertical"
         android:padding="16dp">
 
-        <Button
-            android:id="@+id/button_sign_in"
-            android:layout_width="wrap_content"
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_title"
+            style="@style/LLPHeader"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/llp_sign_in"
-            app:layout_constraintBottom_toTopOf="@id/button_join"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:text="@string/llp_sign_in_welcome_back"
+            />
 
-        <Button
-            android:id="@+id/button_join"
-            android:layout_width="wrap_content"
+        <FrameLayout
+            android:id="@+id/fl_google_sign_in"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/llp_join"
-            app:layout_constraintBottom_toTopOf="@+id/button_reset_password"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/button_sign_in" />
+            android:paddingHorizontal="32dp"
+            android:paddingVertical="13dp"
+            android:layout_marginTop="32dp"
+            android:background="@drawable/llp_bg_sso_button"
+            >
 
-        <Button
-            android:id="@+id/button_reset_password"
+            <androidx.appcompat.widget.AppCompatTextView
+                style="@style/LLPSSOButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/llp_ic_google"
+                android:drawablePadding="12dp"
+                android:layout_gravity="center"
+                android:text="@string/llp_sign_in_with_google"
+                />
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/fl_facebook_sign_in"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="32dp"
+            android:paddingVertical="13dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/llp_bg_sso_button"
+            >
+
+            <androidx.appcompat.widget.AppCompatTextView
+                style="@style/LLPSSOButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:drawableStart="@drawable/llp_ic_facebook"
+                android:drawablePadding="12dp"
+                android:text="@string/llp_sign_in_with_facebook" />
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/fl_line_sign_in"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="32dp"
+            android:paddingVertical="13dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/llp_bg_sso_button"
+            >
+
+            <androidx.appcompat.widget.AppCompatTextView
+                style="@style/LLPSSOButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/llp_ic_line"
+                android:drawablePadding="12dp"
+                android:layout_gravity="center"
+                android:text="@string/llp_sign_in_with_line"
+                />
+
+        </FrameLayout>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/LLPBody4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="@string/llp_social_sign_in_account_creation_notice"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginTop="32dp"
+            >
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="1"
+                android:background="@color/llp_line_2"
+                />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                style="@style/LLPBody4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:text="@string/llp_email_sign_in_option"
+                />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="1"
+                android:background="@color/llp_line_2"
+                />
+
+        </LinearLayout>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/LLPBody4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="@string/llp_required_field_indicator"
+            />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/LLPBodyBold4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="@string/llp_email_address_required"
+            />
+
+        <com.aom_ai.uc_component.view.LLPTextInput
+            android:id="@+id/input_email_address"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="13dp"
+            app:textInputHint="@string/llp_email_address"
+            app:textInputType="textEmailAddress"
+            />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/LLPBodyBold4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/llp_password_required"
+            />
+
+        <com.aom_ai.uc_component.view.LLPTextInput
+            android:id="@+id/input_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="13dp"
+            app:showPasswordToggle="true"
+            app:textInputHint="@string/llp_password"
+            app:textInputType="textPassword"
+            />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/LLPBodyBold4"
+            android:id="@+id/tv_reset_password"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_gravity="end"
             android:text="@string/llp_reset_my_password"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/button_join" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            android:textColor="@color/llp_primary_teal"
+            />
+
+        <androidx.appcompat.widget.AppCompatButton
+            style="@style/LLPButton.Primary"
+            android:id="@+id/button_sign_in"
+            android:layout_marginTop="32dp"
+            android:text="@string/llp_sign_in"
+            />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/LLPBodyBold2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:gravity="center"
+            android:text="@string/llp_not_a_member"
+            />
+
+        <androidx.appcompat.widget.AppCompatButton
+            style="@style/LLPButton.Secondary"
+            android:id="@+id/button_join"
+            android:layout_marginTop="16dp"
+            android:text="@string/llp_join"
+            />
+
+    </LinearLayout>
+
 </androidx.core.widget.NestedScrollView>
