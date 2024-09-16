@@ -33,10 +33,12 @@ class EmailVerificationFragment : Fragment() {
             findNavController().popBackStack()
         }
         binding.buttonNext.setOnClickListener {
-            findNavController().safeNavigateWithArgs(
-                R.id.action_EmailVerificationFragment_to_PasswordSetupFragment,
-                null
-            )
+            if (checkRequiredFieldsFilled()) {
+                findNavController().safeNavigateWithArgs(
+                    R.id.action_EmailVerificationFragment_to_PasswordSetupFragment,
+                    null
+                )
+            }
         }
     }
 
@@ -48,5 +50,13 @@ class EmailVerificationFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    private fun checkRequiredFieldsFilled(): Boolean {
+        if (binding.inputVerificationCode.getText().isEmpty()) {
+            binding.inputVerificationCode.showInValidState("Please enter your verification code.")
+            return false
+        }
+        return true
     }
 }

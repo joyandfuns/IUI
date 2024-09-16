@@ -33,6 +33,11 @@
     <string name="llp_last_name">Last name</string>
     <string name="llp_display_name">Display name</string>
     <string name="llp_email_address_required">Email address *</string>
+    <string name="llp_email_address_verification_required">Email address verification *</string>
     <string name="llp_email_address">Email address</string>
+    <string name="llp_verify_email">Please verify your email</string>
+    <string name="llp_verification_code">Verification code</string>
+    <string name="llp_resend_verification_code">Resend the verification code</string>
+    <string name="llp_verification_email_sent_instructions">A verification email has been sent to \n%1$s.\nPlease check your email for the verification code. Then please enter it in the field below.</string>
 
 </resources>
