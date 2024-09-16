@@ -48,6 +48,8 @@
     <string name="llp_password">Password</string>
     <string name="llp_confirm_password_required">Confirm password *</string>
     <string name="llp_confirm_password">Confirm password</string>
+    <string name="llp_terms_of_service">Terms of Service</string>
+    <string name="llp_privacy_policy">Privacy Policy</string>
     <string name="llp_password_setup_instructions">Please follow the instructions below while setting your account password.</string>
     <string name="llp_account_create_success">Account successfully created</string>
     <string name="llp_account_creation_success_message">Congratulations, you can now sign in with your new account.</string>
@@ -60,6 +62,7 @@
     <string name="llp_password_change_confirmation">Congratulations, you can now sign in with your new password.</string>
     <string name="llp_prompt_confirm_age">Please confirm your age.</string>
     <string name="llp_prompt_confirm_eligibility">Please confirm your eligibility.</string>
+    <string name="llp_prompt_confirm_acceptance">Please confirm your acceptance.</string>
     <string name="llp_error_prefix">Error:&#160;</string>
     <string name="llp_error_message_review_and_retry">Please review the error messages below and try again.</string>
 </resources>

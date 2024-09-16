@@ -1,6 +1,8 @@
 package com.aom_ai.uc_component.view
 
 import android.content.Context
+import android.text.SpannableString
+import android.text.method.LinkMovementMethod
 import android.util.AttributeSet
 import android.view.LayoutInflater
 import android.widget.LinearLayout
@@ -34,6 +36,23 @@ class LLPValidatableCheckBox @JvmOverloads constructor(
             onCheckedChangeListener?.invoke(isChecked)
         }
         a.recycle()
+    }
+
+    fun setText(text: SpannableString, clickable: Boolean) {
+        if (clickable) {
+            binding.tvLegal.text = text
+            binding.tvLegal.movementMethod = LinkMovementMethod.getInstance()
+            binding.tvLegal.visibility = VISIBLE
+            binding.checkbox.text = ""
+        } else {
+            binding.checkbox.text = text
+            binding.tvLegal.visibility = GONE
+        }
+    }
+
+    fun setText(text: String) {
+        binding.checkbox.text = text
+        binding.tvLegal.visibility = GONE
     }
 
     fun validate(errorMsg: String): Boolean {

@@ -31,14 +31,21 @@
             android:text="@string/llp_join_options_description"
             />
 
-        <CheckBox
+        <com.aom_ai.uc_component.view.LLPErrorBanner
+            android:id="@+id/error_banner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:visibility="gone"
+            app:message="@string/llp_error_message_review_and_retry"/>
+
+        <com.aom_ai.uc_component.view.LLPValidatableCheckBox
             android:id="@+id/checkbox_accept_terms_and_privacy"
-            style="@style/LLPCheckbox"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="42dp"
-            android:paddingStart="10dp"
-            android:text="@string/llp_accept_terms_and_privacy"/>
+            app:text="@string/llp_accept_terms_and_privacy"
+            />
 
         <FrameLayout
             android:id="@+id/fl_google_sign_up"

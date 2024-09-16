@@ -2,18 +2,38 @@
 <merge xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    tools:orientation="vertical"
     tools:parentTag="android.widget.LinearLayout">
-
-    <androidx.appcompat.widget.AppCompatCheckBox
-        android:id="@+id/checkbox"
-        style="@style/LLPCheckbox"
+    
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:paddingStart="10dp"
         android:gravity="center_vertical"
-        android:text="@string/llp_confirmation_age_over_18"/>
+        >
 
-    <TextView
+        <androidx.appcompat.widget.AppCompatCheckBox
+            android:id="@+id/checkbox"
+            style="@style/LLPCheckbox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="10dp"
+            android:gravity="center_vertical"
+            tools:text="@string/llp_confirmation_age_over_18"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_legal"
+            style="@style/LLPLegalText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:visibility="gone"
+            tools:visibility="gone"
+            tools:text="afafafasfsadffasdfasfasf\nfsafaffasf\nafaf"
+            />
+        
+    </LinearLayout>
+
+    <androidx.appcompat.widget.AppCompatTextView
         style="@style/LLPBody4"
         android:id="@+id/tvHint"
         android:layout_width="wrap_content"
@@ -21,6 +41,8 @@
         android:layout_marginTop="18dp"
         android:textColor="@color/llp_alert_red"
         android:visibility="gone"
+        tools:visibility="visible"
+        tools:text="@string/llp_prompt_confirm_eligibility"
         />
 
 </merge>

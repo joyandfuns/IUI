@@ -107,6 +107,13 @@
         <item name="android:button">@drawable/llp_bg_checkbox</item>
     </style>
 
+    <!-- LegalText -->
+    <style name="LLPLegalText">
+        <item name="android:textSize">10sp</item>
+        <item name="android:textColor">@color/llp_body_text_1</item>
+        <item name="android:fontFamily">@font/notosans_extrabold</item>
+    </style>
+
     <!-- SSOButton -->
     <style name="LLPSSOButton">
         <item name="android:textSize">16sp</item>
