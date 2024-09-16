@@ -30,10 +30,12 @@ class LandingPageFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.buttonNext.setOnClickListener {
-            findNavController().safeNavigateWithArgs(
-                R.id.action_LandingPageFragment_to_SignUpFragment,
-                null
-            )
+            if (validate()) {
+                findNavController().safeNavigateWithArgs(
+                    R.id.action_LandingPageFragment_to_SignUpFragment,
+                    null
+                )
+            }
         }
         binding.buttonSignIn.setOnClickListener {
             findNavController().safeNavigateWithArgs(
@@ -51,5 +53,21 @@ class LandingPageFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    private fun validate(): Boolean {
+        var isValid = true
+//        binding.checkboxAgeOver18.apply {
+//            if (!isChecked) {
+//                isValid = false
+//                setError(true)
+//            } else {
+//                setError(false)
+//            }
+//        }
+        binding.checkboxWorkEligibilityThailand.apply {
+        }
+
+        return isValid
     }
 }
