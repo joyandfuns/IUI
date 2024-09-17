@@ -8,20 +8,19 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
-import androidx.navigation.ui.setupActionBarWithNavController
-import com.aom_ai.uc_component.databinding.ActivityAuthenticationBinding
+import com.aom_ai.uc_component.databinding.ActivityLlpAuthenticationBinding
 import com.aom_ai.uc_component.utils.StatusBarCompat
 
 class AuthenticationActivity : AppCompatActivity(), IAuthToolbarAction {
 
     private lateinit var appBarConfiguration: AppBarConfiguration
-    private var binding: ActivityAuthenticationBinding? = null
+    private var binding: ActivityLlpAuthenticationBinding? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         StatusBarCompat.setStatusBarStyle(this, Color.WHITE, true)
 
-        binding = ActivityAuthenticationBinding.inflate(layoutInflater)
+        binding = ActivityLlpAuthenticationBinding.inflate(layoutInflater)
         setContentView(binding?.root)
 
         setSupportActionBar(binding?.toolbar)

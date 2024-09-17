@@ -7,12 +7,12 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.navigation.fragment.findNavController
-import com.aom_ai.uc_component.databinding.FragmentSignUpBinding
+import com.aom_ai.uc_component.databinding.FragmentLlpSignUpBinding
 import com.aom_ai.uc_component.utils.setTermsAndPrivacyClickableSpan
 
 class SignUpFragment : Fragment() {
 
-    private var _binding: FragmentSignUpBinding? = null
+    private var _binding: FragmentLlpSignUpBinding? = null
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -23,7 +23,7 @@ class SignUpFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
 
-        _binding = FragmentSignUpBinding.inflate(inflater, container, false)
+        _binding = FragmentLlpSignUpBinding.inflate(inflater, container, false)
         return binding.root
 
     }

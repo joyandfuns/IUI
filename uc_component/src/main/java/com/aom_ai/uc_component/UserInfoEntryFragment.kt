@@ -7,11 +7,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.aom_ai.uc_component.constant.ARG_EMAIL_ADDRESS
-import com.aom_ai.uc_component.databinding.FragmentUserInfoEntryBinding
+import com.aom_ai.uc_component.databinding.FragmentLlpUserInfoEntryBinding
 
 class UserInfoEntryFragment : Fragment() {
 
-    private var _binding: FragmentUserInfoEntryBinding? = null
+    private var _binding: FragmentLlpUserInfoEntryBinding? = null
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -22,7 +22,7 @@ class UserInfoEntryFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
 
-        _binding = FragmentUserInfoEntryBinding.inflate(inflater, container, false)
+        _binding = FragmentLlpUserInfoEntryBinding.inflate(inflater, container, false)
         return binding.root
 
     }

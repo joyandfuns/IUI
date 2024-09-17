@@ -9,12 +9,12 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import com.aom_ai.uc_component.constant.ARG_EMAIL_ADDRESS
-import com.aom_ai.uc_component.databinding.FragmentSignInBinding
+import com.aom_ai.uc_component.databinding.FragmentLlpSignInBinding
 import com.aom_ai.uc_component.dialog.LLPAgreementDialog
 
 class SignInFragment : Fragment() {
 
-    private var _binding: FragmentSignInBinding? = null
+    private var _binding: FragmentLlpSignInBinding? = null
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -25,7 +25,7 @@ class SignInFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
 
-        _binding = FragmentSignInBinding.inflate(inflater, container, false)
+        _binding = FragmentLlpSignInBinding.inflate(inflater, container, false)
         return binding.root
 
     }

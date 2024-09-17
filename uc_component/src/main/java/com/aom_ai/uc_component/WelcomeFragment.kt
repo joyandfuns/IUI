@@ -9,11 +9,11 @@ import android.view.ViewGroup
 import androidx.activity.OnBackPressedCallback
 import androidx.navigation.fragment.findNavController
 import com.aom_ai.uc_component.constant.ARG_IS_RESET_PASSWORD
-import com.aom_ai.uc_component.databinding.FragmentWelcomeBinding
+import com.aom_ai.uc_component.databinding.FragmentLlpWelcomeBinding
 
 class WelcomeFragment : Fragment() {
 
-    private var _binding: FragmentWelcomeBinding? = null
+    private var _binding: FragmentLlpWelcomeBinding? = null
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -45,7 +45,7 @@ class WelcomeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
 
-        _binding = FragmentWelcomeBinding.inflate(inflater, container, false)
+        _binding = FragmentLlpWelcomeBinding.inflate(inflater, container, false)
         return binding.root
 
     }

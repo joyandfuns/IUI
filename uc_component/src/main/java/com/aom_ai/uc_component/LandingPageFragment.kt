@@ -6,11 +6,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
-import com.aom_ai.uc_component.databinding.FragmentLandingPageBinding
+import com.aom_ai.uc_component.databinding.FragmentLlpLandingPageBinding
 
 class LandingPageFragment : Fragment() {
 
-    private var _binding: FragmentLandingPageBinding? = null
+    private var _binding: FragmentLlpLandingPageBinding? = null
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -21,7 +21,7 @@ class LandingPageFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
 
-        _binding = FragmentLandingPageBinding.inflate(inflater, container, false)
+        _binding = FragmentLlpLandingPageBinding.inflate(inflater, container, false)
         return binding.root
 
     }

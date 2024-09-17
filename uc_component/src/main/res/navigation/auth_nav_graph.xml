@@ -9,7 +9,7 @@
         android:id="@+id/LandingPageFragment"
         android:name="com.aom_ai.uc_component.LandingPageFragment"
         android:label="@string/llp_landing_page_fragment_label"
-        tools:layout="@layout/fragment_landing_page">
+        tools:layout="@layout/fragment_llp_landing_page">
 
         <action
             android:id="@+id/action_LandingPageFragment_to_SignUpFragment"
@@ -25,7 +25,7 @@
         android:id="@+id/SignUpFragment"
         android:name="com.aom_ai.uc_component.SignUpFragment"
         android:label="@string/llp_sign_up_fragment_label"
-        tools:layout="@layout/fragment_sign_up">
+        tools:layout="@layout/fragment_llp_sign_up">
 
         <action
             android:id="@+id/action_SignUpFragment_to_UserInfoEntryFragment"
@@ -42,7 +42,7 @@
         android:id="@+id/SignInFragment"
         android:name="com.aom_ai.uc_component.SignInFragment"
         android:label="@string/llp_sign_in_fragment_label"
-        tools:layout="@layout/fragment_sign_in">
+        tools:layout="@layout/fragment_llp_sign_in">
 
         <action
             android:id="@+id/action_SignInFragment_to_ResetPasswordFragment"
@@ -57,7 +57,7 @@
         android:id="@+id/UserInfoEntryFragment"
         android:name="com.aom_ai.uc_component.UserInfoEntryFragment"
         android:label="@string/llp_user_info_entry_fragment_label"
-        tools:layout="@layout/fragment_user_info_entry">
+        tools:layout="@layout/fragment_llp_user_info_entry">
 
         <action
             android:id="@+id/action_UserInfoEntryFragment_to_EmailVerificationFragment"
@@ -68,7 +68,7 @@
         android:id="@+id/EmailVerificationFragment"
         android:name="com.aom_ai.uc_component.EmailVerificationFragment"
         android:label="@string/llp_email_verification_fragment_label"
-        tools:layout="@layout/fragment_email_verification">
+        tools:layout="@layout/fragment_llp_email_verification">
 
         <action
             android:id="@+id/action_EmailVerificationFragment_to_PasswordSetupFragment"
@@ -80,7 +80,7 @@
         android:id="@+id/PasswordSetupFragment"
         android:name="com.aom_ai.uc_component.PasswordSetupFragment"
         android:label="@string/llp_password_setup_fragment_label"
-        tools:layout="@layout/fragment_password_setup">
+        tools:layout="@layout/fragment_llp_password_setup">
 
         <action
             android:id="@+id/action_PasswordSetupFragment_to_WelcomeFragment"
@@ -91,7 +91,7 @@
         android:id="@+id/WelcomeFragment"
         android:name="com.aom_ai.uc_component.WelcomeFragment"
         android:label="@string/llp_welcome_fragment_label"
-        tools:layout="@layout/fragment_welcome">
+        tools:layout="@layout/fragment_llp_welcome">
 
         <action
             android:id="@+id/action_WelcomeFragment_to_LandingPageFragment"
@@ -102,7 +102,7 @@
         android:id="@+id/ResetPasswordFragment"
         android:name="com.aom_ai.uc_component.ResetPasswordFragment"
         android:label="@string/llp_reset_password_fragment_label"
-        tools:layout="@layout/fragment_reset_password">
+        tools:layout="@layout/fragment_llp_reset_password">
 
         <action
             android:id="@+id/action_ResetPasswordFragment_to_EmailVerificationFragment"

@@ -9,11 +9,11 @@ import androidx.activity.OnBackPressedCallback
 import androidx.navigation.fragment.findNavController
 import com.aom_ai.uc_component.constant.ARG_EMAIL_ADDRESS
 import com.aom_ai.uc_component.constant.ARG_IS_RESET_PASSWORD
-import com.aom_ai.uc_component.databinding.FragmentEmailVerificationBinding
+import com.aom_ai.uc_component.databinding.FragmentLlpEmailVerificationBinding
 
 class EmailVerificationFragment : Fragment() {
 
-    private var _binding: FragmentEmailVerificationBinding? = null
+    private var _binding: FragmentLlpEmailVerificationBinding? = null
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -46,7 +46,7 @@ class EmailVerificationFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
 
-        _binding = FragmentEmailVerificationBinding.inflate(inflater, container, false)
+        _binding = FragmentLlpEmailVerificationBinding.inflate(inflater, container, false)
         return binding.root
 
     }

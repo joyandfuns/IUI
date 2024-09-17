@@ -8,11 +8,11 @@ import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.aom_ai.uc_component.constant.ARG_EMAIL_ADDRESS
 import com.aom_ai.uc_component.constant.ARG_IS_RESET_PASSWORD
-import com.aom_ai.uc_component.databinding.FragmentResetPasswordBinding
+import com.aom_ai.uc_component.databinding.FragmentLlpResetPasswordBinding
 
 class ResetPasswordFragment : Fragment() {
 
-    private var _binding: FragmentResetPasswordBinding? = null
+    private var _binding: FragmentLlpResetPasswordBinding? = null
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -25,7 +25,7 @@ class ResetPasswordFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
 
-        _binding = FragmentResetPasswordBinding.inflate(inflater, container, false)
+        _binding = FragmentLlpResetPasswordBinding.inflate(inflater, container, false)
         return binding.root
 
     }
