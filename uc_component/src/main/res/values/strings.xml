@@ -79,4 +79,12 @@
     <string name="llp_error_invalid_password_format">Your password does not meet the format requirements. Please amend.</string>
     <string name="llp_agreement_dialog_title">Terms of Service\nand Privacy Policy</string>
     <string name="llp_prompt_completing_checkbox">Please confirm your acceptance by completing the checkbox below.</string>
+
+
+
+    <string name="llp_my_course">My courses</string>
+    <string name="llp_browse">Browse</string>
+    <string name="llp_search">Search</string>
+
+
 </resources>

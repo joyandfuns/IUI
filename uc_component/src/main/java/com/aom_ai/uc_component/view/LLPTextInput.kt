@@ -74,11 +74,11 @@ class LLPTextInput @JvmOverloads constructor(
 
         binding.edittext.inputType = inputType
         binding.edittext.imeOptions = imeOptions
-        if (showPasswordToggle) {
-            binding.textInputLayout.endIconMode = TextInputLayout.END_ICON_PASSWORD_TOGGLE
-            binding.textInputLayout.setEndIconDrawable(R.drawable.llp_password_toggle)
-            binding.edittext.typeface = Typeface.DEFAULT
-        }
+//        if (showPasswordToggle) {
+//            binding.textInputLayout.endIconMode = TextInputLayout.END_ICON_PASSWORD_TOGGLE
+//            binding.textInputLayout.setEndIconDrawable(R.drawable.llp_password_toggle)
+//            binding.edittext.typeface = Typeface.DEFAULT
+//        }
     }
 
     fun setText(text: String?) {

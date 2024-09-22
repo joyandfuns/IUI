@@ -1,18 +1,17 @@
-package com.aom_ai.uc_component
+package com.aom_ai.main_page
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.aom_ai.uc_component.databinding.ActivityFakeHomeBinding
+import com.aom_ai.main_page.databinding.ActivityHomePageBinding
 
-class FakeHomeActivity : AppCompatActivity() {
+class HomePageActivity : AppCompatActivity() {
 
-    private var binding: ActivityFakeHomeBinding? = null
+    private var binding: ActivityHomePageBinding? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_fake_home)
 
-        binding = ActivityFakeHomeBinding.inflate(layoutInflater)
+        binding = ActivityHomePageBinding.inflate(layoutInflater)
         binding?.bottomNavigation?.setOnNavigationItemSelectedListener { item ->
             return@setOnNavigationItemSelectedListener when (item.itemId) {
                 R.id.llp_nav_my_courses -> {

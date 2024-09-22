@@ -1,2 +1,3 @@
 include ':app'
 include ':uc_component'
+include ':main_page'

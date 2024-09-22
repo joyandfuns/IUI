@@ -33,9 +33,6 @@ class SignInFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.buttonSignIn.setOnClickListener {
-
-        }
         binding.buttonJoin.setOnClickListener {
             findNavController().popBackStack(R.id.LandingPageFragment, false)
         }
@@ -64,12 +61,14 @@ class SignInFragment : Fragment() {
             }
         }
         binding.buttonSignIn.setOnClickListener {
-            checkAgreement {
-                if (checkRequiredFieldsFilled()) {
-                    activity?.startActivity(Intent(activity, FakeHomeActivity::class.java))
-                    activity?.finish()
-                }
-            }
+//            checkAgreement {
+//                if (checkRequiredFieldsFilled()) {
+//                    activity?.startActivity(Intent(activity, FakeHomeActivity::class.java))
+//                    activity?.finish()
+//                }
+//            }
+            activity?.startActivity(Intent(activity, FakeHomeActivity::class.java))
+            activity?.finish()
         }
     }
 
