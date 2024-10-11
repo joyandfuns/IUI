@@ -5,14 +5,14 @@ import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import androidx.appcompat.app.AppCompatActivity
-import com.aom_ai.uc_component.AuthenticationActivity
+import com.aom_ai.main_page.HomePageActivity
 
 class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         Handler(Looper.getMainLooper()).postDelayed({
-            startActivity(Intent(this, AuthenticationActivity::class.java))
+            startActivity(Intent(this, HomePageActivity::class.java))
             finish()
         }, 2000)
     }

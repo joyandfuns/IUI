@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="llp_bottom_nav_items">
+        <item>@string/llp_my_course</item>
+        <item>@string/llp_browse</item>
+        <item>@string/llp_search</item>
+    </array>
+</resources>

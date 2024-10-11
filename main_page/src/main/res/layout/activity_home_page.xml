@@ -5,21 +5,20 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".FakeHomeActivity">
+    tools:context=".HomePageActivity">
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottomNavigation"
+    <com.aom_ai.main_page.view.LLPBottomNavigationView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:layout_marginHorizontal="32dp"
-        android:layout_marginBottom="16dp"
         android:background="@drawable/llp_bg_bottom_navigation"
+        android:paddingHorizontal="8dp"
+        android:paddingVertical="6dp"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:menu="@menu/llp_bottom_nav_menu"
-        app:labelVisibilityMode="labeled"
-        app:itemTextColor="@color/llp_white"
+        app:llpNavItems="@array/llp_bottom_nav_items"
         />
-
+    
 </androidx.constraintlayout.widget.ConstraintLayout>

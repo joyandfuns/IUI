@@ -13,23 +13,5 @@ class FakeHomeActivity : AppCompatActivity() {
         setContentView(R.layout.activity_fake_home)
 
         binding = ActivityFakeHomeBinding.inflate(layoutInflater)
-        binding?.bottomNavigation?.setOnNavigationItemSelectedListener { item ->
-            return@setOnNavigationItemSelectedListener when (item.itemId) {
-                R.id.llp_nav_my_courses -> {
-                    // Respond to navigation item 1 click
-                    true
-                }
-                R.id.llp_nav_browse -> {
-                    // Respond to navigation item 1 click
-                    true
-                }
-                R.id.llp_nav_search -> {
-                    // Respond to navigation item 1 click
-                    true
-                }
-                else  -> false
-            }
-        }
-        binding?.bottomNavigation?.selectedItemId = R.id.llp_nav_my_courses
     }
 }
