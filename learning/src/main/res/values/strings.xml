@@ -1,3 +1,6 @@
 <resources>
+    <string name="llp_course_outline">Course outline</string>
+    <string name="llp_previous">Previous</string>
+    <string name="llp_key_learning_points">Key learning points</string>
 
 </resources>

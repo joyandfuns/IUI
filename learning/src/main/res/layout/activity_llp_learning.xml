@@ -1,43 +1,188 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
+    android:background="@color/llp_white"
     tools:context=".LearningActivity">
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="@color/llp_white"
-        app:contentInsetStartWithNavigation="0dp">
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingBottom="28dp">
 
-        <LinearLayout
-            android:id="@+id/ll_back"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:gravity="center"
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/llp_background_1"
+            app:contentInsetStartWithNavigation="0dp">
+
+            <LinearLayout
+                android:id="@+id/ll_back"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                >
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/llp_ic_back_black"
+                    />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/LLPToolbarTitle"
+                    android:id="@+id/tv_toolbar_title"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/llp_back"
+                    android:paddingStart="12dp"
+                    />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/llp_ic_menu"
+                    android:paddingHorizontal="16dp"
+                    />
+
+            </LinearLayout>
+
+        </androidx.appcompat.widget.Toolbar>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/llp_line_2"
+            />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/LLPBody2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            android:layout_marginTop="28dp"
+            android:layout_marginHorizontal="24dp"
+            android:text="@string/llp_course_outline"
+            />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/LLPHeader4"
+            android:id="@+id/tv_course_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="start"
+            android:layout_marginTop="24dp"
+            android:layout_marginHorizontal="24dp"
+            tools:text="EV 1"
+            />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/LLPHeader5"
+            android:id="@+id/tv_resource_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="start"
+            android:layout_marginTop="32dp"
+            android:layout_marginHorizontal="24dp"
+            tools:text="Characteristics of the supply chain"
+            />
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="48dp"
+            android:layout_marginHorizontal="24dp"
             >
 
-            <androidx.appcompat.widget.AppCompatImageView
+            <LinearLayout
+                android:id="@+id/ll_previous"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/llp_ic_back_black"
-                />
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
 
-            <androidx.appcompat.widget.AppCompatTextView
-                style="@style/LLPHeader"
-                android:id="@+id/tv_toolbar_title"
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/llp_ic_back_black"
+                    />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/LLPButtonText1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginVertical="5dp"
+                    android:text="@string/llp_previous"
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_next"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/llp_back"
-                android:paddingStart="12dp"
-                />
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_gravity="end">
 
-        </LinearLayout>
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/LLPButtonText1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginVertical="5dp"
+                    android:text="@string/llp_next"
+                    />
 
-    </androidx.appcompat.widget.Toolbar>
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/llp_ic_next_black"
+                    />
 
-</LinearLayout>
+            </LinearLayout>
+
+        </FrameLayout>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/LLPBody1"
+            android:id="@+id/tv_introduce"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="48dp"
+            android:layout_marginHorizontal="24dp"
+            android:textColor="@color/llp_black"
+            tools:text="Today you’ll be learning about consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+            />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/LLPHeader5"
+            android:id="@+id/tv_title_key_learning_points"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:layout_marginHorizontal="24dp"
+            android:text="@string/llp_key_learning_points"
+            />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/LLPBody1"
+            android:id="@+id/tv_key_learning_points"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:layout_marginHorizontal="24dp"
+            android:textColor="@color/llp_black"
+            tools:text="Lorem ipsum odor amet, consectetuer adipiscing elit. Scelerisque risus quam pellentesque nisi mattis porttitor ullamcorper est.\n\nVestibulum accumsan luctus tristique hendrerit maximus potenti montes massa. Placerat id ex himenaeos ultrices netus magnis auctor."
+            />
+
+    </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>
