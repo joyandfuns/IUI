@@ -1,0 +1,90 @@
+<resources>
+
+    <string name="llp_landing_page_fragment_label">Landing Page Fragment</string>
+    <string name="llp_sign_up_fragment_label">Sign Up Fragment</string>
+    <string name="llp_sign_in_fragment_label">Sign In Fragment</string>
+    <string name="llp_user_info_entry_fragment_label">UserInfo Entry Fragment</string>
+    <string name="llp_email_verification_fragment_label">Email Verification Fragment</string>
+    <string name="llp_password_setup_fragment_label">Password Setup Fragment</string>
+    <string name="llp_welcome_fragment_label">Welcome Fragment</string>
+    <string name="llp_reset_password_fragment_label">Reset Password Fragment</string>
+    <string name="llp_next">Next</string>
+    <string name="llp_previous">Previous</string>
+    <string name="llp_cancel">Cancel</string>
+    <string name="llp_proceed">Proceed</string>
+    <string name="llp_sign_in">Sign in</string>
+    <string name="llp_join_with_email">Join with email</string>
+    <string name="llp_join">Join</string>
+    <string name="llp_reset_my_password">Reset my password</string>
+    <string name="llp_sign_in_automatically">Sign in automatically</string>
+    <string name="llp_join_our_community">Join our community</string>
+    <string name="llp_aom_ai_description">aom-ai enables you to gain valuable new knowledge and skills to help you in your work.</string>
+    <string name="llp_already_a_member">Already a member?</string>
+    <string name="llp_not_a_member">Not a member?</string>
+    <string name="llp_confirmation_age_over_18">I am over 18 years of age.</string>
+    <string name="llp_confirmation_work_eligibility_thailand">I am eligible to work in Thailand.</string>
+    <string name="llp_back">Back</string>
+    <string name="llp_join_options_description">It\'s quick and easy to join with your Google or Facebook account. Alternatively, you could join using your email address.</string>
+    <string name="llp_accept_terms_and_privacy">I have read and agree to the Terms of Service \nand Privacy Policy</string>
+    <string name="llp_join_with_google">Join with Google</string>
+    <string name="llp_sign_in_with_google">Sign in with Google</string>
+    <string name="llp_join_with_facebook">Join with Facebook</string>
+    <string name="llp_sign_in_with_facebook">Sign in with Facebook</string>
+    <string name="llp_join_with_line">Join with Line</string>
+    <string name="llp_sign_in_with_line">Sign in with Line</string>
+    <string name="llp_required_field_indicator">* indicates required field.</string>
+    <string name="llp_first_name_required">First name *</string>
+    <string name="llp_first_name">First name</string>
+    <string name="llp_last_name_required">Last name *</string>
+    <string name="llp_last_name">Last name</string>
+    <string name="llp_display_name">Display name</string>
+    <string name="llp_email_address_required">Email address *</string>
+    <string name="llp_email_address_verification_required">Email address verification *</string>
+    <string name="llp_email_address">Email address</string>
+    <string name="llp_verify_email">Please verify your email</string>
+    <string name="llp_verification_code">Verification code</string>
+    <string name="llp_resend_verification_code">Resend the verification code</string>
+    <string name="llp_verification_email_sent_instructions">A verification email has been sent to \n%1$s.\nPlease check your email for the verification code. Then please enter it in the field below.</string>
+    <string name="llp_set_your_password">Set your password</string>
+    <string name="llp_password_required">Password *</string>
+    <string name="llp_password">Password</string>
+    <string name="llp_confirm_password_required">Confirm password *</string>
+    <string name="llp_confirm_password">Confirm password</string>
+    <string name="llp_terms_of_service">Terms of Service</string>
+    <string name="llp_privacy_policy">Privacy Policy</string>
+    <string name="llp_password_setup_instructions">Please follow the instructions below while setting your account password.</string>
+    <string name="llp_account_create_success">Account successfully created</string>
+    <string name="llp_account_creation_success_message">Congratulations, you can now sign in with your new account.</string>
+    <string name="llp_sign_in_welcome_back">Welcome back \nto your learning journey</string>
+    <string name="llp_social_sign_in_account_creation_notice">Signing in with Google, Facebook, Apple or Line will create an account in aom-ai if one does not already exist.</string>
+    <string name="llp_email_sign_in_option">or sign in using email</string>
+    <string name="llp_action_back_to_sign_in">Back to sign in</string>
+    <string name="llp_prompt_enter_email_for_account">Please enter the email address you use for aom-ai.</string>
+    <string name="llp_password_save_success">Password successfully saved</string>
+    <string name="llp_password_change_confirmation">Congratulations, you can now sign in with your new password.</string>
+    <string name="llp_prompt_confirm_age">Please confirm your age.</string>
+    <string name="llp_prompt_confirm_eligibility">Please confirm your eligibility.</string>
+    <string name="llp_prompt_confirm_acceptance">Please confirm your acceptance.</string>
+    <string name="llp_error_prefix">Error:&#160;</string>
+    <string name="llp_note_prefix">Note:&#160;</string>
+    <string name="llp_error_message_review_and_retry">Please review the error messages below and try again.</string>
+    <string name="llp_prompt_enter_first_name">Please enter your first name.</string>
+    <string name="llp_prompt_enter_last_name">Please enter your last name.</string>
+    <string name="llp_prompt_enter_email_address">Please enter your email address.</string>
+    <string name="llp_prompt_enter_password">Please enter your password.</string>
+    <string name="llp_prompt_enter_verification_code">Please enter your verification code.</string>
+    <string name="llp_password_requirements_description">The length of your password should be 8–16 characters.\nNo spaces are allowed.\nYou must include at least three of the following four elements:\n - an uppercase letter\n - a lowercase letter\n - a number\n - an English symbol (such as !%$&amp;).\nThere must be no consecutive or repeated combinations in the password (such as abc123$$$).\nYour password cannot include your email address.</string>
+    <string name="llp_hint_send_verification_code">Note: Clicking Next step will send a verification code to the email address above.</string>
+    <string name="llp_error_invalid_email_format">Please enter a valid email address. An example would be: name@email.com</string>
+    <string name="llp_error_invalid_password_format">Your password does not meet the format requirements. Please amend.</string>
+    <string name="llp_agreement_dialog_title">Terms of Service\nand Privacy Policy</string>
+    <string name="llp_prompt_completing_checkbox">Please confirm your acceptance by completing the checkbox below.</string>
+
+
+
+    <string name="llp_my_course">My courses</string>
+    <string name="llp_browse">Browse</string>
+    <string name="llp_search">Search</string>
+
+
+</resources>
