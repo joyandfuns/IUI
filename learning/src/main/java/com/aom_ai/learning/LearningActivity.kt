@@ -1,6 +1,5 @@
 package com.aom_ai.learning
 
-import android.graphics.Color
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.aom_ai.learning.databinding.ActivityLlpLearningBinding
