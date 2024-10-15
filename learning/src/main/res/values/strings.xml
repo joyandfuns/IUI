@@ -3,7 +3,9 @@
     <string name="llp_previous">Previous</string>
     <string name="llp_key_learning_points">Key learning points</string>
 
-    <string name="llp_lesson_complete_progress">%d1 / %d1 lessons completed</string>
+    <string name="llp_lesson_complete_progress">%1d / %2d lessons completed</string>
     <string name="llp_lesson_complete_percentage">%d%% Complete</string>
+    <string name="llp_video_duration">%s - %d minutes</string>
+    <string name="llp_doc_duration">%s - %d minutes read</string>
 
 </resources>

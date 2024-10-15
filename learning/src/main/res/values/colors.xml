@@ -2,4 +2,5 @@
 <resources>
     <color name="llp_background_1">#F4F5F6</color>
     <color name="llp_black_2">#0F0F0F</color>
+    <color name="llp_body_text_2">#8A9AA8</color>
 </resources>

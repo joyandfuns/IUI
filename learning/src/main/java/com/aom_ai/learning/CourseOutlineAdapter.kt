@@ -34,14 +34,15 @@ class CourseOutlineAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     }
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
+        val isNearUnit = position != items.lastIndex && items[position + 1] is CourseItem.Unit
         when (val item = items[position]) {
             is CourseItem.Header -> (holder as HeaderViewHolder).bind(item)
             is CourseItem.Unit -> {
                 val isLastUnit = position == items.lastIndex || items[position + 1] !is CourseItem.Unit
                 (holder as UnitViewHolder).bind(item, position, isLastUnit)
             }
-            is CourseItem.Lesson -> (holder as LessonViewHolder).bind(item, position)
-            is CourseItem.Resource -> (holder as ResourceViewHolder).bind(item)
+            is CourseItem.Lesson -> (holder as LessonViewHolder).bind(item, isNearUnit, position)
+            is CourseItem.Resource -> (holder as ResourceViewHolder).bind(item, isNearUnit)
         }
     }
 
@@ -57,9 +58,11 @@ class CourseOutlineAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     }
 
     fun setItems(newItems: List<CourseItem>) {
+        val diffCallback = CourseItemDiffCallback(items, newItems)
+        val diffResult = DiffUtil.calculateDiff(diffCallback)
         items.clear()
         items.addAll(newItems)
-        notifyDataSetChanged()
+        diffResult.dispatchUpdatesTo(this)
     }
 
     // 在这里定义各种ViewHolder类
@@ -85,55 +88,84 @@ class CourseOutlineAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
             binding.ivExpand.setImageResource(if (unit.isExpanded) R.drawable.llp_ic_expand_gray else R.drawable.llp_ic_fold_gray)
             binding.divider.visibility = if (isLastUnit && !unit.isExpanded) View.GONE else View.VISIBLE
 
-            binding.ivExpand.setOnClickListener {
-                unit.isExpanded = !unit.isExpanded
-                if (unit.isExpanded) {
-                    val index = items.indexOf(unit)
-                    items.addAll(index + 1, unit.lessons)
-                    notifyItemRangeInserted(index + 1, unit.lessons.size)
-                } else {
-                    val index = items.indexOf(unit)
-                    val itemsToRemove = unit.lessons.flatMap { lesson ->
-                        listOf(lesson) + if (lesson.isExpanded) lesson.resources else emptyList()
-                    }
-                    items.removeAll(itemsToRemove)
-                    notifyItemRangeRemoved(index + 1, itemsToRemove.size)
-                }
-                notifyItemChanged(position) // 更新单元项本身以反映展开/折叠状态
+            if (unit.status == LearningStatus.NOT_STARTED) {
+                binding.tvTitle.setTextColor(ContextCompat.getColor(binding.root.context, R.color.llp_body_text_2))
+                binding.tvProgress.setTextColor(ContextCompat.getColor(binding.root.context, R.color.llp_body_text_2))
+                binding.progressBar.progressDrawable = ContextCompat.getDrawable(binding.root.context, R.drawable.llp_custom_disable_progress_bar)
+            } else {
+                binding.tvTitle.setTextColor(ContextCompat.getColor(binding.root.context, com.aom_ai.uc_component.R.color.llp_body_text_1))
+                binding.tvProgress.setTextColor(ContextCompat.getColor(binding.root.context, com.aom_ai.uc_component.R.color.llp_body_text_1))
+                binding.progressBar.progressDrawable = ContextCompat.getDrawable(binding.root.context, R.drawable.llp_custom_progress_bar)
+            }
+            binding.llUnitHeader.setOnClickListener {
+                toggleExpansion(position)
             }
         }
     }
 
     inner class LessonViewHolder(private val binding: LlpItemCourseOutlineLessonBinding) : BaseItemViewHolder(binding.root) {
 
-        fun bind(lesson: CourseItem.Lesson, position: Int) {
+        fun bind(lesson: CourseItem.Lesson, isNearUnit: Boolean, position: Int) {
             setBackgroundColor(lesson.status)
             binding.tvTitle.text = lesson.title
             binding.ivCheck.visibility = if (lesson.status == LearningStatus.COMPLETED) View.VISIBLE else View.GONE
             binding.ivExpand.setImageResource(if (lesson.isExpanded) R.drawable.llp_ic_expand_gray else R.drawable.llp_ic_fold_gray)
-            binding.ivExpand.setOnClickListener {
-                lesson.isExpanded = !lesson.isExpanded
-                if (lesson.isExpanded) {
-                    val index = items.indexOf(lesson)
-                    items.addAll(index + 1, lesson.resources)
-                    notifyItemRangeInserted(index + 1, lesson.resources.size)
-                } else {
-                    val index = items.indexOf(lesson)
-                    val itemsToRemove = lesson.resources
-                    items.removeAll(itemsToRemove)
-                    notifyItemRangeRemoved(index + 1, itemsToRemove.size)
-                }
-                notifyItemChanged(position) // 更新单元项本身以反映展开/折叠状态
+            binding.divider.visibility = if (isNearUnit) View.VISIBLE else View.GONE
+            binding.root.setOnClickListener {
+                toggleExpansion(position)
             }
         }
     }
 
     inner class ResourceViewHolder(private val binding: LlpItemCourseOutlineResourceBinding) : BaseItemViewHolder(binding.root) {
 
-        fun bind(resource: CourseItem.Resource) {
+        fun bind(resource: CourseItem.Resource, isNearUnit: Boolean) {
             setBackgroundColor(resource.lessonStatus)
-            binding.tvTitle.text = resource.title
+            val title: String
+            val iconDrawableId: Int
+            when (resource.type) {
+                ResourceType.VIDEO -> {
+                    title = binding.root.context.getString(R.string.llp_video_duration, resource.title, resource.duration)
+                    iconDrawableId = if (resource.isPlaying) {
+                        R.drawable.llp_ic_video_cam_teal
+                    } else if (resource.lessonStatus == LearningStatus.NOT_STARTED) {
+                        R.drawable.llp_ic_video_cam_grey
+                    } else {
+                        R.drawable.llp_ic_video_cam
+                    }
+                }
+                ResourceType.AUDIO -> {
+                    title = binding.root.context.getString(R.string.llp_video_duration, resource.title, resource.duration)
+                    iconDrawableId = if (resource.isPlaying) {
+                        R.drawable.llp_ic_headphones_teal
+                    } else if (resource.lessonStatus == LearningStatus.NOT_STARTED) {
+                        R.drawable.llp_ic_headphones_grey
+                    } else {
+                        R.drawable.llp_ic_headphones
+                    }
+                }
+                ResourceType.DOCUMENT -> {
+                    title = binding.root.context.getString(R.string.llp_doc_duration, resource.title, resource.duration)
+                    iconDrawableId = if (resource.isPlaying) {
+                        R.drawable.llp_ic_document_teal
+                    } else if (resource.lessonStatus == LearningStatus.NOT_STARTED) {
+                        R.drawable.llp_ic_document_grey
+                    } else {
+                        R.drawable.llp_ic_document
+                    }
+                }
+            }
+            binding.tvTitle.text = title
+            binding.ivIcon.setImageResource(iconDrawableId)
+            if (resource.isPlaying) {
+                binding.tvTitle.setTextColor(ContextCompat.getColor(binding.root.context, com.aom_ai.uc_component.R.color.llp_primary_teal))
+            } else if (resource.lessonStatus == LearningStatus.NOT_STARTED) {
+                binding.tvTitle.setTextColor(ContextCompat.getColor(binding.root.context, R.color.llp_body_text_2))
+            } else {
+                binding.tvTitle.setTextColor(ContextCompat.getColor(binding.root.context, R.color.llp_black_2))
+            }
             binding.ivCheck.visibility = if (resource.status == LearningStatus.COMPLETED) View.VISIBLE else View.GONE
+            binding.divider.visibility = if (isNearUnit) View.VISIBLE else View.GONE
         }
     }
 
@@ -146,6 +178,39 @@ class CourseOutlineAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
                     ContextCompat.getColor(itemView.context, R.color.llp_background_1)
             }
             (itemView as? ViewGroup)?.setBackgroundColor(backgroundColor)
+        }
+    }
+
+    private fun toggleExpansion(position: Int) {
+        when (val item = items[position]) {
+            is CourseItem.Unit -> {
+                item.isExpanded = !item.isExpanded
+                if (item.isExpanded) {
+                    val newItems = items.toMutableList()
+                    newItems.addAll(position + 1, item.lessons)
+                    setItems(newItems)
+                } else {
+                    val newItems = items.toMutableList()
+                    val itemsToRemove = item.lessons.flatMap { lesson ->
+                        listOf(lesson) + if (lesson.isExpanded) lesson.resources else emptyList()
+                    }
+                    newItems.removeAll(itemsToRemove)
+                    setItems(newItems)
+                }
+            }
+            is CourseItem.Lesson -> {
+                item.isExpanded = !item.isExpanded
+                if (item.isExpanded) {
+                    val newItems = items.toMutableList()
+                    newItems.addAll(position + 1, item.resources)
+                    setItems(newItems)
+                } else {
+                    val newItems = items.toMutableList()
+                    newItems.removeAll(item.resources)
+                    setItems(newItems)
+                }
+            }
+            else -> return
         }
     }
 
@@ -176,6 +241,7 @@ class CourseOutlineAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
             val completedLessons: Int,
             val totalLessons: Int,
             var isExpanded: Boolean = false,
+            val status: LearningStatus,
             val lessons: List<Lesson>
         ) : CourseItem()
 
@@ -188,13 +254,19 @@ class CourseOutlineAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
         data class Resource(
             val title: String,
-            val duration: String,
+            val duration: Int,
             val lessonStatus: LearningStatus,
-            val status: LearningStatus
+            val status: LearningStatus,
+            val type: ResourceType,
+            val isPlaying: Boolean = false
         ) : CourseItem()
     }
 
     enum class LearningStatus {
         COMPLETED, IN_PROGRESS, NOT_STARTED
+    }
+
+    enum class ResourceType {
+        VIDEO, AUDIO, DOCUMENT
     }
 }
