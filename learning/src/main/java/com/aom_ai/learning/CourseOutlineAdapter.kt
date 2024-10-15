@@ -40,9 +40,9 @@ class CourseOutlineAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
             is CourseItem.Header -> (holder as HeaderViewHolder).bind(item)
             is CourseItem.Unit -> {
                 val isLastUnit = position == items.lastIndex || items[position + 1] !is CourseItem.Unit
-                (holder as UnitViewHolder).bind(item, position, isLastUnit)
+                (holder as UnitViewHolder).bind(item, isLastUnit)
             }
-            is CourseItem.Lesson -> (holder as LessonViewHolder).bind(item, isNearUnit, position)
+            is CourseItem.Lesson -> (holder as LessonViewHolder).bind(item, isNearUnit)
             is CourseItem.Resource -> (holder as ResourceViewHolder).bind(item, isNearUnit)
         }
     }
@@ -79,7 +79,7 @@ class CourseOutlineAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     inner class UnitViewHolder(private val binding: LlpItemCourseOutlineUnitBinding) : RecyclerView.ViewHolder(binding.root) {
 
-        fun bind(unit: CourseItem.Unit, position: Int, isLastUnit: Boolean) {
+        fun bind(unit: CourseItem.Unit, isLastUnit: Boolean) {
             binding.tvTitle.text = unit.title
             binding.tvProgress.text = binding.root.context.getString(R.string.llp_lesson_complete_progress, unit.completedLessons, unit.totalLessons)
             binding.progressBar.max = unit.totalLessons
@@ -99,21 +99,21 @@ class CourseOutlineAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
                 binding.progressBar.progressDrawable = ContextCompat.getDrawable(binding.root.context, R.drawable.llp_custom_progress_bar)
             }
             binding.llUnitHeader.setOnClickListener {
-                toggleExpansion(position)
+                toggleExpansion(unit)
             }
         }
     }
 
     inner class LessonViewHolder(private val binding: LlpItemCourseOutlineLessonBinding) : BaseItemViewHolder(binding.root) {
 
-        fun bind(lesson: CourseItem.Lesson, isNearUnit: Boolean, position: Int) {
+        fun bind(lesson: CourseItem.Lesson, isNearUnit: Boolean) {
             setBackgroundColor(lesson.status)
             binding.tvTitle.text = lesson.title
             binding.ivCheck.visibility = if (lesson.status == LearningStatus.COMPLETED) View.VISIBLE else View.GONE
             binding.ivExpand.setImageResource(if (lesson.isExpanded) R.drawable.llp_ic_expand_gray else R.drawable.llp_ic_fold_gray)
             binding.divider.visibility = if (isNearUnit) View.VISIBLE else View.GONE
             binding.root.setOnClickListener {
-                toggleExpansion(position)
+                toggleExpansion(lesson)
             }
         }
     }
@@ -182,9 +182,12 @@ class CourseOutlineAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
         }
     }
 
-    private fun toggleExpansion(position: Int) {
-        when (val item = items[position]) {
+    private fun toggleExpansion(item: CourseItem) {
+        when (item) {
             is CourseItem.Unit -> {
+                val position = items.indexOf(item)
+                if (position == -1) return  // Item not found in the list
+
                 val newUnit = item.copy(isExpanded = !item.isExpanded)
                 val newItems = items.toMutableList()
                 newItems[position] = newUnit
@@ -200,6 +203,9 @@ class CourseOutlineAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
                 setItems(newItems)
             }
             is CourseItem.Lesson -> {
+                val position = items.indexOf(item)
+                if (position == -1) return  // Item not found in the list
+
                 val newLesson = item.copy(isExpanded = !item.isExpanded)
                 val newItems = items.toMutableList()
                 newItems[position] = newLesson
