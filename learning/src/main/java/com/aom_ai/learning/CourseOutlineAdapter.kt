@@ -1,5 +1,6 @@
 package com.aom_ai.learning
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -184,31 +185,30 @@ class CourseOutlineAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     private fun toggleExpansion(position: Int) {
         when (val item = items[position]) {
             is CourseItem.Unit -> {
-                item.isExpanded = !item.isExpanded
-                if (item.isExpanded) {
-                    val newItems = items.toMutableList()
-                    newItems.addAll(position + 1, item.lessons)
-                    setItems(newItems)
+                val newUnit = item.copy(isExpanded = !item.isExpanded)
+                val newItems = items.toMutableList()
+                newItems[position] = newUnit
+                if (newUnit.isExpanded) {
+                    newItems.addAll(position + 1, newUnit.lessons)
                 } else {
-                    val newItems = items.toMutableList()
-                    val itemsToRemove = item.lessons.flatMap { lesson ->
-                        listOf(lesson) + if (lesson.isExpanded) lesson.resources else emptyList()
+                    val itemsToRemove = newUnit.lessons.flatMap { lesson ->
+                        val newLesson = lesson.copy(isExpanded = false)
+                        listOf(newLesson) + if (lesson.isExpanded) lesson.resources else emptyList()
                     }
                     newItems.removeAll(itemsToRemove)
-                    setItems(newItems)
                 }
+                setItems(newItems)
             }
             is CourseItem.Lesson -> {
-                item.isExpanded = !item.isExpanded
-                if (item.isExpanded) {
-                    val newItems = items.toMutableList()
-                    newItems.addAll(position + 1, item.resources)
-                    setItems(newItems)
+                val newLesson = item.copy(isExpanded = !item.isExpanded)
+                val newItems = items.toMutableList()
+                newItems[position] = newLesson
+                if (newLesson.isExpanded) {
+                    newItems.addAll(position + 1, newLesson.resources)
                 } else {
-                    val newItems = items.toMutableList()
-                    newItems.removeAll(item.resources)
-                    setItems(newItems)
+                    newItems.removeAll(newLesson.resources)
                 }
+                setItems(newItems)
             }
             else -> return
         }
@@ -220,10 +220,19 @@ class CourseOutlineAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     ) : DiffUtil.Callback() {
         override fun getOldListSize() = oldList.size
         override fun getNewListSize() = newList.size
-        override fun areItemsTheSame(oldItemPosition: Int, newItemPosition: Int) =
-            oldList[oldItemPosition] == newList[newItemPosition]
-        override fun areContentsTheSame(oldItemPosition: Int, newItemPosition: Int) =
-            oldList[oldItemPosition] == newList[newItemPosition]
+        override fun areItemsTheSame(oldItemPosition: Int, newItemPosition: Int): Boolean {
+            val areItemsTheSame = oldList[oldItemPosition] == newList[newItemPosition]
+            Log.d("AAAAA", "areItemsTheSame oldItemPosition: $oldItemPosition, newItemPosition: $newItemPosition $areItemsTheSame")
+            Log.d("AAAAA", "Old ${oldList[oldItemPosition]}")
+            Log.d("AAAAA", "New ${newList[newItemPosition]}")
+            return areItemsTheSame
+        }
+
+        override fun areContentsTheSame(oldItemPosition: Int, newItemPosition: Int): Boolean {
+            val areContentTheSame = oldList[oldItemPosition] == newList[newItemPosition]
+            Log.d("AAAAA", "areContentsTheSame oldItemPosition: $oldItemPosition, newItemPosition: $newItemPosition $areContentTheSame")
+            return areContentTheSame
+        }
     }
 
     companion object {
@@ -240,14 +249,14 @@ class CourseOutlineAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
             val title: String,
             val completedLessons: Int,
             val totalLessons: Int,
-            var isExpanded: Boolean = false,
+            val isExpanded: Boolean = false,
             val status: LearningStatus,
             val lessons: List<Lesson>
         ) : CourseItem()
 
         data class Lesson(
             val title: String,
-            var isExpanded: Boolean = false,
+            val isExpanded: Boolean = false,
             val status: LearningStatus,
             val resources: List<Resource>
         ) : CourseItem()
