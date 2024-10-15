@@ -4,13 +4,14 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:padding="32dp">
+    android:paddingTop="32dp">
 
     <ProgressBar
         android:id="@+id/progressBar"
         style="@style/LLPCustomProgressBar"
         android:layout_width="match_parent"
         android:layout_height="8dp"
+        android:paddingHorizontal="32dp"
         tools:max="100"
         tools:progress="24" />
 
@@ -19,6 +20,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:layout_marginTop="6dp"
+        android:paddingHorizontal="32dp"
         >
 
         <androidx.appcompat.widget.AppCompatTextView
@@ -41,5 +43,13 @@
             />
 
     </LinearLayout>
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="32dp"
+        android:background="@color/llp_line_2"
+        />
 
 </LinearLayout>
