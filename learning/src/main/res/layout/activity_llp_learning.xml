@@ -63,9 +63,11 @@
 
         <androidx.appcompat.widget.AppCompatTextView
             style="@style/LLPBody2"
-            android:layout_width="match_parent"
+            android:id="@+id/tv_course_outline"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="end"
+            android:layout_gravity="end"
             android:layout_marginTop="28dp"
             android:layout_marginHorizontal="24dp"
             android:text="@string/llp_course_outline"

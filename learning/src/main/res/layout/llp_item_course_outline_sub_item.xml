@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:gravity="center_vertical"
+    android:paddingHorizontal="24dp"
+    android:paddingTop="18dp">
+
+    <ImageView
+        android:id="@+id/ivIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/llp_ic_video_cam" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        style="@style/LLPTextInterMedium"
+        android:id="@+id/tvTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_marginHorizontal="8dp"
+        android:textSize="12sp"
+        android:textColor="@color/llp_black_2"
+        tools:text="Raw materials mining and processingprocessing - 5 minute read"/>
+
+    <ImageView
+        android:id="@+id/ivCheck"
+        android:layout_width="16dp"
+        android:layout_height="16dp"
+        android:src="@drawable/llp_ic_check_circle_green"
+        android:visibility="gone"
+        tools:visibility="visible"/>
+
+</LinearLayout>

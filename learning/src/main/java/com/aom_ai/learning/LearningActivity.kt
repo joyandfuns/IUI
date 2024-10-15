@@ -17,6 +17,10 @@ class LearningActivity : AppCompatActivity() {
         binding = ActivityLlpLearningBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        binding.tvCourseOutline.setOnClickListener {
+            CourseOutlineDialog.newInstance().show(supportFragmentManager, CourseOutlineDialog::class.java.simpleName)
+        }
+
     }
 
 }

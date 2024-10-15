@@ -13,7 +13,7 @@ import com.aom_ai.uc_component.utils.getScreenDimension
 
 abstract class BaseDialogFragment : DialogFragment() {
 
-    final override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return if (getLayoutId() != 0) {
             inflater.inflate(getLayoutId(), container, false)
         } else {

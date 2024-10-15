@@ -22,4 +22,20 @@
         <item name="android:textColor">@color/llp_black</item>
     </style>
 
+    <style name="LLPCustomProgressBar" parent="@style/Widget.AppCompat.ProgressBar.Horizontal">
+        <item name="android:progressDrawable">@drawable/llp_custom_progress_bar</item>
+        <item name="android:minHeight">12dp</item>
+        <item name="android:maxHeight">12dp</item>
+    </style>
+
+    <style name="LLPTextInterMedium">
+        <item name="android:fontFamily">@font/inter_medium</item>
+        <item name="android:textColor">@color/llp_body_text_1</item>
+    </style>
+
+    <style name="LLPTextInterBold">
+        <item name="android:fontFamily">@font/inter_semibold</item>
+        <item name="android:textColor">@color/llp_black_2</item>
+    </style>
+
 </resources>
