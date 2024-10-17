@@ -52,6 +52,7 @@ class LearningViewModel(context: Context) : ViewModel() {
                         }
                     }
             } catch (e: Exception) {
+                e.printStackTrace()
                 updateState(CourseUiState.Error)
             }
         }

@@ -18,6 +18,7 @@ import com.aom_ai.learning.data.LessonRecord
 import com.aom_ai.learning.data.Resource
 import com.aom_ai.learning.data.ResourceProgress
 import com.aom_ai.learning.data.ResourceRecord
+import com.google.gson.reflect.TypeToken
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import java.io.IOException
@@ -216,7 +217,8 @@ class LearningRepository(private val context: Context) {
         val jsonString = readJsonFromAssets("course_lesson.json")
         return jsonString?.let {
             val gson = Gson()
-            gson.fromJson(it, HashMap<String?, LessonProgress?>()::class.java)
+            val type = object : TypeToken<Map<String?, LessonProgress?>>() {}.type
+            gson.fromJson(it, type)
         }
     }
 
@@ -224,7 +226,8 @@ class LearningRepository(private val context: Context) {
         val jsonString = readJsonFromAssets("lesson_resource.json")
         return jsonString?.let {
             val gson = Gson()
-            gson.fromJson(it, HashMap<String?, ResourceProgress?>()::class.java)
+            val type = object : TypeToken<Map<String?, ResourceProgress?>>() {}.type
+            gson.fromJson(it, type)
         }
     }
 
