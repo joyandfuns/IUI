@@ -1,0 +1,23 @@
+{
+  "d65478c0-4c0f-46ae-b677-087c4986a6b1": {
+    "id": "670f8722640788001f0330db",
+    "user_id": 473514226869,
+    "lesson_id": "d65478c0-4c0f-46ae-b677-087c4986a6b1",
+    "course_id": "38ca1d6c-2beb-4f38-b6f4-a84858a66eda",
+    "status": 0
+  },
+  "a2c3065b-3083-4223-b01e-763855a041a4": {
+    "id": "670f8722640788001f0330dc",
+    "user_id": 473514226869,
+    "lesson_id": "a2c3065b-3083-4223-b01e-763855a041a4",
+    "course_id": "38ca1d6c-2beb-4f38-b6f4-a84858a66eda",
+    "status": 1
+  },
+  "ceb71957-4adb-42b5-9dde-664c12b8c51b": {
+    "id": "670f8722640788001f0330dd",
+    "user_id": 473514226869,
+    "lesson_id": "ceb71957-4adb-42b5-9dde-664c12b8c51b",
+    "course_id": "38ca1d6c-2beb-4f38-b6f4-a84858a66eda",
+    "status": 2
+  }
+}

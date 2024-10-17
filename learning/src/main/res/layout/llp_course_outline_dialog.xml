@@ -45,6 +45,60 @@
         android:background="@color/llp_line_2"
         />
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingTop="32dp">
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="@style/LLPCustomProgressBar"
+            android:layout_width="match_parent"
+            android:layout_height="8dp"
+            android:paddingHorizontal="32dp"
+            tools:max="100"
+            tools:progress="24" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="6dp"
+            android:paddingHorizontal="32dp"
+            >
+
+            <androidx.appcompat.widget.AppCompatTextView
+                style="@style/LLPBody4"
+                android:id="@+id/tvProgress"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textColor="@color/llp_black_2"
+                android:layout_weight="1"
+                tools:text="12 / 50 lessons completed completedssssssss" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                style="@style/LLPBody4"
+                android:id="@+id/tvPercentage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/llp_black_2"
+                android:layout_marginStart="6dp"
+                tools:text="24% Complete"
+                />
+
+        </LinearLayout>
+
+        <View
+            android:id="@+id/divider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="32dp"
+            android:background="@color/llp_line_2"
+            />
+
+    </LinearLayout>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_course_outline"
         android:layout_width="match_parent"

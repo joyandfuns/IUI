@@ -1,0 +1,34 @@
+{
+  "a9f947e6-590f-4503-994c-961f4fc3edd6": {
+    "id": "670fd3a6640788001f0330e9",
+    "user_id": 473514226869,
+    "resource_id": "a9f947e6-590f-4503-994c-961f4fc3edd6",
+    "resource_name": "1_1_李瑨瑶 - 小镇姑娘_Vocals_Vocals_auto_0key_sovdiff_pm",
+    "resource_type": "video",
+    "topic_type": null,
+    "progress": null,
+    "status": 1,
+    "catalog_type": null,
+    "ext_info": null,
+    "create_time": "2024-10-16T22:54:30.419+0800",
+    "update_time": "2024-10-16T22:54:30.419+0800",
+    "client_id": "",
+    "lesson_id": "a2c3065b-3083-4223-b01e-763855a041a4"
+  },
+  "55bde28a-4392-4d31-b610-77c2a16c7c6b": {
+    "id": "670fd54a640788001f0330ed",
+    "user_id": 473514226869,
+    "resource_id": "55bde28a-4392-4d31-b610-77c2a16c7c6b",
+    "resource_name": "20241015_170233",
+    "resource_type": "video",
+    "topic_type": null,
+    "progress": null,
+    "status": 2,
+    "catalog_type": null,
+    "ext_info": null,
+    "create_time": "2024-10-16T23:01:30.073+0800",
+    "update_time": "2024-10-16T23:01:30.073+0800",
+    "client_id": "",
+    "lesson_id": "a2c3065b-3083-4223-b01e-763855a041a4"
+  }
+}
