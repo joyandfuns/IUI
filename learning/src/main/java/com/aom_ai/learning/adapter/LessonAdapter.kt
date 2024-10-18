@@ -36,7 +36,7 @@ class LessonAdapter : RecyclerView.Adapter<LessonAdapter.LessonViewHolder>() {
 
         fun bind(lesson: LessonUiState) {
             setBackgroundColor(lesson.status)
-            binding.tvTitle.text = lesson.name
+            binding.tvTitle.text = lesson.title
             binding.ivCheck.visibility = if (lesson.status == LearningStatus.COMPLETED) View.VISIBLE else View.GONE
             showExpendUI(lesson)
             binding.root.setOnClickListener {

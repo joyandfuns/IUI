@@ -17,5 +17,5 @@ data class ResourceUiState(
     val videoExtend: VideoExtend?,
     val lessonStatus: LearningStatus,
     val status: LearningStatus,
-    val isPlaying: Boolean
+    var isPlaying: Boolean
 ) : Parcelable

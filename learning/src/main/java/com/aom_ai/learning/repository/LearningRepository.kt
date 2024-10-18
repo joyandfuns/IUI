@@ -22,7 +22,6 @@ import com.google.gson.reflect.TypeToken
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import java.io.IOException
-import java.util.HashMap
 
 class LearningRepository(private val context: Context) {
 
@@ -145,7 +144,7 @@ class LearningRepository(private val context: Context) {
     ): LessonUiState {
         return LessonUiState(
             id = lesson.id,
-            name = lesson.name ?: "",
+            title = lesson.name ?: "",
             remark = lesson.remark ?: "",
             orderNo = lesson.orderNo ?: 0,
             resources = lesson.resources?.mapNotNull { resource ->

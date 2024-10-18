@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.lifecycleScope
 import com.aom_ai.learning.R
 import com.aom_ai.learning.adapter.CourseOutlineAdapter
 import com.aom_ai.learning.databinding.LlpCourseOutlineDialogBinding
@@ -14,6 +15,7 @@ import com.aom_ai.learning.viewmodel.LearningViewModelFactory
 import com.aom_ai.uc_component.dialog.BaseDialogFragment
 import com.aom_ai.uc_component.utils.dpiToPixels
 import com.aom_ai.uc_component.utils.getScreenDimension
+import kotlinx.coroutines.flow.collectLatest
 
 class CourseOutlineDialog : BaseDialogFragment() {
 
@@ -39,20 +41,21 @@ class CourseOutlineDialog : BaseDialogFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val courseInfo = viewModel.getLatestCourseInfo()
 
         binding?.ivClose?.setOnClickListener {
             dismissAllowingStateLoss()
         }
 
-        courseInfo?.let {
-            initHeaderData(it)
-            adapter = CourseOutlineAdapter()
-            binding?.rvCourseOutline?.adapter = adapter
-            adapter?.setItems(it.units)
+        lifecycleScope.launchWhenStarted {
+            viewModel.courseInfo.collectLatest { courseInfo ->
+                courseInfo?.let {
+                    initHeaderData(it)
+                    adapter = CourseOutlineAdapter()
+                    binding?.rvCourseOutline?.adapter = adapter
+                    adapter?.setItems(it.units)
+                }
+            }
         }
-
-
     }
 
     override fun onStart() {

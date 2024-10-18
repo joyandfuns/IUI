@@ -6,7 +6,7 @@ import kotlinx.parcelize.Parcelize
 @Parcelize
 data class LessonUiState(
     val id: String?,
-    val name: String,
+    val title: String,
     val remark: String,
     val orderNo: Int,
     val resources: List<ResourceUiState>,

@@ -40,4 +40,8 @@
         <item name="android:textColor">@color/llp_black_2</item>
     </style>
 
+    <style name="LLPLoadingBar" parent="@style/Widget.AppCompat.ProgressBar">
+        <item name="android:indeterminateTint">@color/llp_primary_teal</item>
+    </style>
+
 </resources>

@@ -11,3 +11,10 @@ data class CourseInfoUiState(
     val modulesCount: Int,
     val units: List<CourseUnitUiState>
 ) : Parcelable
+
+fun CourseInfoUiState.findPlayingResource(): ResourceUiState? {
+    return units.asSequence()
+        .flatMap { it.lessons.asSequence() }
+        .flatMap { it.resources.asSequence() }
+        .find { it.isPlaying }
+}
