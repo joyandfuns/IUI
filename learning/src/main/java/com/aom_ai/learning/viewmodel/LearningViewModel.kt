@@ -64,9 +64,9 @@ class LearningViewModel(context: Context) : ViewModel() {
                             if (playingResource == null) {
                                 _uiState.value = LearningUiState.Empty
                             } else {
+                                _courseInfo.value = courseInfoUiState
                                 updateCurrentResource(playingResource)
                                 _uiState.value = LearningUiState.Success
-                                _courseInfo.value = courseInfoUiState
                             }
                         }
                     }

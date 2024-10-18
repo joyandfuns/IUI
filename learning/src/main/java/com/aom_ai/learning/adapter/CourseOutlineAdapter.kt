@@ -62,7 +62,6 @@ class CourseOutlineAdapter : RecyclerView.Adapter<CourseOutlineAdapter.UnitViewH
 
         private fun showExpendUI(unit: CourseUnitUiState, isLastUnit: Boolean) {
             binding.ivExpand.setImageResource(if (unit.expended) R.drawable.llp_ic_expand_gray else R.drawable.llp_ic_fold_gray)
-            binding.divider.visibility = if (isLastUnit && !unit.expended) View.GONE else View.VISIBLE
             binding.rvLessons.visibility = if (unit.expended) View.VISIBLE else View.GONE
             if (unit.expended) {
                 val adapter = LessonAdapter()
